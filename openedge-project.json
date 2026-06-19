@@ -1,0 +1,35 @@
+{
+    "name": "abl keycloak angular multi tenant",
+    "charset": "iso8859-1",
+    "version": "1.0",
+    "oeversion": "12.8",
+    "buildDirectory": "target/rcode",
+    "graphicalMode": true,
+    "extraParameters": "-T target/temp",
+    "numThreads": 1,
+    "dbConnections": [{
+        "name": "KeycloakMT",
+        "schemaFile": "./db/KeycloakMT.df",
+        "connect":"-db C:/Projets/keycloak-angular-multi-tenant/db/KeycloakMT.db -S 20000"
+    },{
+        "name": "context",
+        "schemaFile": "./db/context.df",
+        "connect":"-db C:/Projets/keycloak-angular-multi-tenant/db/context.db -S 20001"
+    }],
+    "buildPath": [
+        { "type": "source", "path": "pasoe/openedge", "includes": "**/*.cls,**/*.p", "excludes": "**/HybridRealm.cls" },
+        { "type": "source", "path": "pasoe/webapps/ROOT/WEB-INF/openedge", "includes": "**/*.cls,**/*.p", "excludes": "**/HybridRealm.cls" },
+        { "type": "source", "path": "pasoe/webapps/oeabl/WEB-INF/openedge", "includes": "**/*.cls,**/*.p", "excludes": "**/HybridRealm.cls" },
+        { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.apl" }
+    ],
+    "procedures": [],
+    "profiles": [
+      {
+        "name": "",
+        "inherits": "default",
+        "value": {
+          "dbConnections": [] 
+        }
+      }
+    ]
+}

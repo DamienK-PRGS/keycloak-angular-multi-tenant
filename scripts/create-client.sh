@@ -70,4 +70,3 @@ curl -q  --location --request POST "http://localhost:8080/auth/admin/realms/$REA
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer $ACCESS_TOKEN" \
 --data "$(generate_client_json)"
-

@@ -1,0 +1,847 @@
+
+                Thu Jun 18 18:03:23 2026
+[2026/06/18@18:03:23.652+0200] P-93376      T-58048 I DBUTIL   : (451)   prostrct create session begin for khoury on CON:. 
+[2026/06/18@18:03:23.656+0200] P-93376      T-58048 I DBUTIL   : (12862) Structure file context.st used to create database with blocksize 4096. 
+[2026/06/18@18:03:23.690+0200] P-93376      T-58048 I DBUTIL   : (334)   prostrct create session end. 
+[2026/06/18@18:03:23.713+0200] P-93376      T-58048 I DBUTIL   : (451)   procopy session begin for khoury on CON:. 
+[2026/06/18@18:03:23.739+0200] P-93376      T-58048 I DBUTIL   : (334)   procopy session end. 
+
+                Thu Jun 18 18:03:23 2026
+[2026/06/18@18:03:23.802+0200] P-93376      T-58048 I DBUTIL   : (451)   procopy get default SQL DBA session begin for khoury on CON:. 
+[2026/06/18@18:03:23.806+0200] P-93376      T-58048 I DBUTIL   : (15321) Before Image Log Initialization at block 0  offset 0. 
+[2026/06/18@18:03:23.911+0200] P-93376      T-58048 I DBUTIL   : (1365)  Database copied from C:\DLC\128\empty. 
+[2026/06/18@18:03:23.952+0200] P-93376      T-58048 I DBUTIL   : (15109) At Database close the number of live transactions is 0. 
+[2026/06/18@18:03:23.958+0200] P-93376      T-58048 I DBUTIL   : (15743) Before Image Log Completion at Block 0 Offset 642. 
+[2026/06/18@18:03:23.973+0200] P-93376      T-58048 I DBUTIL   : (334)   procopy get default SQL DBA session end. 
+
+                Thu Jun 18 18:04:01 2026
+[2026/06/18@18:04:01.849+0200] P-3096       T-82832 I ABL      : (451)   Single-user session begin for khoury on batch. 
+[2026/06/18@18:04:01.854+0200] P-3096       T-82832 I ABL      : (15321) Before Image Log Initialization at block 0  offset 642. 
+[2026/06/18@18:04:01.888+0200] P-3096       T-82832 I ABL      : (7129)  Usr 0 set name to khoury. 
+[2026/06/18@18:05:34.868+0200] P-3096       T-82832 I ABL      : (15109) At Database close the number of live transactions is 0. 
+[2026/06/18@18:05:34.868+0200] P-3096       T-82832 I ABL      : (15743) Before Image Log Completion at Block 3 Offset 3415. 
+[2026/06/18@18:05:34.909+0200] P-3096       T-82832 I ABL      : (334)   Single-user session end. 
+
+                Thu Jun 18 18:05:58 2026
+[2026/06/18@18:05:58.438+0200] P-42352      T-27168 I BROKER  0: (333)   Multi-user session begin. 
+[2026/06/18@18:05:58.443+0200] P-42352      T-27168 I BROKER  0: (15321) Before Image Log Initialization at block 3  offset 3415. 
+[2026/06/18@18:05:58.474+0200] P-42352      T-27168 I BROKER  0: (452)   Login by khoury on CON:. 
+[2026/06/18@18:05:58.490+0200] P-42352      T-27168 I BROKER  0: (5644)  Started for 20001 using TCP IPV4 address 0.0.0.0, pid 42352. 
+[2026/06/18@18:05:58.492+0200] P-42352      T-27168 I BROKER  0: (19117) This installation is licensed to: Progress by C:\DLC\128\progress.cfg 
+[2026/06/18@18:05:58.492+0200] P-42352      T-27168 I BROKER  0: (19116) Product: 4GL Development System installed with serial number: 6275053 expiration: None. 
+[2026/06/18@18:05:58.492+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Client Networking installed with serial number: 6275054 expiration: None. 
+[2026/06/18@18:05:58.492+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Auth Gateway installed with serial number: 6287659 expiration: 11/14/2025. 
+[2026/06/18@18:05:58.492+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE CDC for Enterprise installed with serial number: 6275056 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE CDC for Workgroup installed with serial number: 6275057 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OpenEdge Mgt. SE installed with serial number: 6275058 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE DataServer MS SQL S installed with serial number: 6275063 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE DataServer for Orac installed with serial number: 6275064 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Enterprise RDBMS installed with serial number: 6275065 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Multi-tenant Tables installed with serial number: 6275066 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Personal RDBMS installed with serial number: 6275067 expiration: None. 
+[2026/06/18@18:05:58.493+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Adv. Ent. RDBMS installed with serial number: 6275068 expiration: None. 
+[2026/06/18@18:05:58.494+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Studio installed with serial number: 6275069 expiration: None. 
+[2026/06/18@18:05:58.494+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OpenEdge TDE installed with serial number: 6275070 expiration: None. 
+[2026/06/18@18:05:58.494+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Ultra Controls .NET installed with serial number: 6275071 expiration: None. 
+[2026/06/18@18:05:58.494+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OE Workgroup RDBMS installed with serial number: 6275072 expiration: None. 
+[2026/06/18@18:05:58.495+0200] P-42352      T-27168 I BROKER  0: (19116) Product: PASOE Lite installed with serial number: 6275073 expiration: None. 
+[2026/06/18@18:05:58.495+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Progress Dev Studio OE installed with serial number: 6275074 expiration: None. 
+[2026/06/18@18:05:58.495+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Query/RESULTS installed with serial number: 6275077 expiration: None. 
+[2026/06/18@18:05:58.495+0200] P-42352      T-27168 I BROKER  0: (19116) Product: SNMP Adapter installed with serial number: 6275078 expiration: None. 
+[2026/06/18@18:05:58.495+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Table Partitioning installed with serial number: 6275079 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Pro2 CDC Enterprise installed with serial number: 6275080 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Progress OEAS installed with serial number: 6275081 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OpenEdge Replication installed with serial number: 6275059 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: OpenEdge Repl Plus installed with serial number: 6275061 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Progress Dev AS for OE installed with serial number: 6275075 expiration: None. 
+[2026/06/18@18:05:58.496+0200] P-42352      T-27168 I BROKER  0: (19116) Product: Progress ProdAS for OE installed with serial number: 6275076 expiration: None. 
+[2026/06/18@18:05:58.497+0200] P-42352      T-27168 I BROKER  0: (4234)  Progress OpenEdge Release 12.8 build 1274 SP11 on WINNT . 
+[2026/06/18@18:05:58.497+0200] P-42352      T-27168 I BROKER  0: (19552) Broker with server num 0 logged in. 
+[2026/06/18@18:05:58.498+0200] P-42352      T-27168 I BROKER  0: (4281)  Server started by khoury on CON:. 
+[2026/06/18@18:05:58.498+0200] P-42352      T-27168 I BROKER  0: (6574)  Started using pid: 42352. 
+[2026/06/18@18:05:58.499+0200] P-42352      T-27168 I BROKER  0: (9426)  Large database file access has been enabled. 
+[2026/06/18@18:05:58.499+0200] P-42352      T-27168 I BROKER  0: (15219) Encryption enabled: 0 
+[2026/06/18@18:05:58.500+0200] P-42352      T-27168 I BROKER  0: (15824) Multi-tenancy enabled: 0 
+[2026/06/18@18:05:58.500+0200] P-42352      T-27168 I BROKER  0: (15824) Table Partitioning enabled: 0 
+[2026/06/18@18:05:58.500+0200] P-42352      T-27168 I BROKER  0: (15824) Authentication Gateway enabled: 0 
+[2026/06/18@18:05:58.501+0200] P-42352      T-27168 I BROKER  0: (9336)  Created shared memory with segment_id: 1 
+[2026/06/18@18:05:58.501+0200] P-42352      T-27168 I BROKER  0: (4250)  Before-Image Cluster Size: 524288 
+[2026/06/18@18:05:58.502+0200] P-42352      T-27168 I BROKER  0: (4251)  Before-Image Block Size: 8192 
+[2026/06/18@18:05:58.502+0200] P-42352      T-27168 I BROKER  0: (4255)  After-Image Block Size: 8192. 
+[2026/06/18@18:05:58.503+0200] P-42352      T-27168 I BROKER  0: (20665) Database Code Page: iso8859-1. 
+[2026/06/18@18:05:58.504+0200] P-42352      T-27168 I BROKER  0: (20666) Database Collation: basic. 
+[2026/06/18@18:05:58.504+0200] P-42352      T-27168 I BROKER  0: (20667) Word-rule File Number: 0. 
+[2026/06/18@18:05:58.504+0200] P-42352      T-27168 I BROKER  0: (20668) Word-rule File CRC: 0. 
+[2026/06/18@18:05:58.504+0200] P-42352      T-27168 I BROKER  0: (13873) After-image Management Archival Directory List (-aiarcdir): Not Enabled 
+[2026/06/18@18:05:58.504+0200] P-42352      T-27168 I BROKER  0: (13874) Create After-image Management Archival Directory(s) (-aiarcdircreate): Not Enabled 
+[2026/06/18@18:05:58.505+0200] P-42352      T-27168 I BROKER  0: (13872) After-image Management Archival Interval (-aiarcinterval): -1 
+[2026/06/18@18:05:58.505+0200] P-42352      T-27168 I BROKER  0: (4256)  Number of After-Image Buffers (-aibufs): 64 
+[2026/06/18@18:05:58.505+0200] P-42352      T-27168 I BROKER  0: (4254)  After-Image Stall (-aistall): Not Enabled 
+[2026/06/18@18:05:58.505+0200] P-42352      T-27168 I BROKER  0: (17555) Starting index number for statistics range (-baseindex): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (19091) Starting LOB number for statistics range (-baselob): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (17554) Starting table number for statistics range (-basetable): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (18406) Starting index number per user for statistics range (-baseuserindex): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (19092) Starting LOB number per user for statistics range (-baseuserlob): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (18404) Starting table number per user for statistics range (-baseusertable): 1 
+[2026/06/18@18:05:58.506+0200] P-42352      T-27168 I BROKER  0: (4252)  Number of Before-Image Buffers (-bibufs): 64 
+[2026/06/18@18:05:58.507+0200] P-42352      T-27168 I BROKER  0: (20052) BI Scan Time (-biscantime): 10 seconds 
+[2026/06/18@18:05:58.507+0200] P-42352      T-27168 I BROKER  0: (6552)  BI File Threshold Stall (-bistall): Disabled 
+[2026/06/18@18:05:58.508+0200] P-42352      T-27168 I BROKER  0: (9238)  BI File Threshold size (-bithold): 0.0   Bytes 
+[2026/06/18@18:05:58.508+0200] P-42352      T-27168 I BROKER  0: (6573)  Database Blocksize (-blocksize): 4096 
+[2026/06/18@18:05:58.509+0200] P-42352      T-27168 I BROKER  0: (12812) BIW writer delay (-bwdelay): 30 
+[2026/06/18@18:05:58.509+0200] P-42352      T-27168 I BROKER  0: (12813) Allowed index cursors (-c): 84 
+[2026/06/18@18:05:58.510+0200] P-42352      T-27168 I BROKER  0: (18495) CDC cache size (-cdcsize): 200k bytes 
+[2026/06/18@18:05:58.510+0200] P-42352      T-27168 I BROKER  0: (12265) SSL Certificate Store Path (-certstorepath): Not Enabled 
+[2026/06/18@18:05:58.510+0200] P-42352      T-27168 I BROKER  0: (20643) Client Database-Request Statement Caching directory (-clstmtcachedir): Not Enabled 
+[2026/06/18@18:05:58.510+0200] P-42352      T-27168 I BROKER  0: (4264)  Character Set (-cpinternal): ISO8859-1 
+[2026/06/18@18:05:58.511+0200] P-42352      T-27168 I BROKER  0: (19442) C stack print option (-cstackPrintopt): 0 
+[2026/06/18@18:05:58.511+0200] P-42352      T-27168 I BROKER  0: (4235)  Physical Database Name (-db): context 
+[2026/06/18@18:05:58.512+0200] P-42352      T-27168 I BROKER  0: (19519) Number of DB Notification Operations (-dbnotifyops): 16 
+[2026/06/18@18:05:58.512+0200] P-42352      T-27168 I BROKER  0: (19511) DB Notification Time (-dbnotifytime): 30 seconds 
+[2026/06/18@18:05:58.512+0200] P-42352      T-27168 I BROKER  0: (18558) Diagnostic directory (-diagDir): Not Enabled 
+[2026/06/18@18:05:58.512+0200] P-42352      T-27168 I BROKER  0: (18576) Diagnostic events value (-diagEvent): LockTable:0,BiThold:0,SysErr:0 
+[2026/06/18@18:05:58.513+0200] P-42352      T-27168 I BROKER  0: (18560) Diagnostic event level (-diagEvtLevel): 0 
+[2026/06/18@18:05:58.513+0200] P-42352      T-27168 I BROKER  0: (18561) Diagnostic field separator (-diagFS): ' ' 
+[2026/06/18@18:05:58.513+0200] P-42352      T-27168 I BROKER  0: (18579) Diagnostic data format (-diagFormat): csv 
+[2026/06/18@18:05:58.513+0200] P-42352      T-27168 I BROKER  0: (18562) Diagnostic pause length (-diagPause): 0 
+[2026/06/18@18:05:58.513+0200] P-42352      T-27168 I BROKER  0: (18563) Diagnostic prefix value (-diagPrefix): diagEvent_ 
+[2026/06/18@18:05:58.514+0200] P-42352      T-27168 I BROKER  0: (18580) Diagnostic procedure (-diagProc): Not Enabled 
+[2026/06/18@18:05:58.514+0200] P-42352      T-27168 I BROKER  0: (4238)  Direct I/O (-directio): Not Enabled 
+[2026/06/18@18:05:58.514+0200] P-42352      T-27168 I BROKER  0: (4236)  Database Type (-dt): PROGRESS 
+[2026/06/18@18:05:58.514+0200] P-42352      T-27168 I BROKER  0: (15218) Encryption cache size (-ecsize): 1000 
+[2026/06/18@18:05:58.514+0200] P-42352      T-27168 I BROKER  0: (12814) Group delay (-groupdelay): 10 
+[2026/06/18@18:05:58.515+0200] P-42352      T-27168 I BROKER  0: (4242)  Hash Table Entries (-hash): 887 
+[2026/06/18@18:05:58.515+0200] P-42352      T-27168 I BROKER  0: (19195) Buffer pool hash table latch percentage (-hashLatchFactor): 10 
+[2026/06/18@18:05:58.516+0200] P-42352      T-27168 I BROKER  0: (20436) Allow hostname alias or specific IP address for the -H parameter (-hostnameAliasing): Not Enabled 
+[2026/06/18@18:05:58.516+0200] P-42352      T-27168 I BROKER  0: (4244)  Crash Recovery (-i): Enabled 
+[2026/06/18@18:05:58.516+0200] P-42352      T-27168 I BROKER  0: (17557) Number of indexes included in statistics collection (-indexrangesize): 50 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (14268) TCP/IP Version (-ipver): IPV4 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (12263) SSL Key Alias Name (-keyalias): Not Enabled 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (19216) Database log file archive directory (-lgArchiveDir): Not Enabled 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (19215) Archive database log file before truncation (-lgArchiveEnable): Not Enabled 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (19213) Frequency of database log file truncation (-lgTruncateFrequency): -1 
+[2026/06/18@18:05:58.517+0200] P-42352      T-27168 I BROKER  0: (19214) The maximum size the database log file can grow before truncation (-lgTruncateSize): 0MB 
+[2026/06/18@18:05:58.518+0200] P-42352      T-27168 I BROKER  0: (19212) Time of day for the database log file truncation (-lgTruncateTime): 00:00 
+[2026/06/18@18:05:58.518+0200] P-42352      T-27168 I BROKER  0: (19137) Limit .lg file payload (-limitLgPayload): Not Enabled 
+[2026/06/18@18:05:58.518+0200] P-42352      T-27168 I BROKER  0: (12815) Lock table hash table size (-lkhash): 1237 
+[2026/06/18@18:05:58.518+0200] P-42352      T-27168 I BROKER  0: (17805) Original Lock Release Algorithm (-lkrela): Not Enabled 
+[2026/06/18@18:05:58.519+0200] P-42352      T-27168 I BROKER  0: (19090) Number of LOBs included in statistics collection (-lobrangesize): 50 
+[2026/06/18@18:05:58.519+0200] P-42352      T-27168 I BROKER  0: (17560) Number of LRU force skips (-lruskips): 100 
+[2026/06/18@18:05:58.519+0200] P-42352      T-27168 I BROKER  0: (17561) Number of LRU2 force skips (-lru2skips): 100 
+[2026/06/18@18:05:58.520+0200] P-42352      T-27168 I BROKER  0: (13953) Maximum Area Number (-maxArea): 32000 
+[2026/06/18@18:05:58.520+0200] P-42352      T-27168 I BROKER  0: (5649)  Maximum Port for Auto Servers (-maxport): 5000 
+[2026/06/18@18:05:58.522+0200] P-42352      T-27168 I BROKER  0: (12540) Size of JTA transaction table (-maxxids): 100 
+[2026/06/18@18:05:58.522+0200] P-42352      T-27168 I BROKER  0: (5648)  Minimum Port for Auto Servers (-minport): 3000 
+[2026/06/18@18:05:58.522+0200] P-42352      T-27168 I BROKER  0: (17564) Multi-tenancy partition cache size (-mtpmsize): 1024 
+[2026/06/18@18:05:58.522+0200] P-42352      T-27168 I BROKER  0: (12821) Use muxlatches (-mux): 1 
+[2026/06/18@18:05:58.522+0200] P-42352      T-27168 I BROKER  0: (4260)  Maximum Number of Users (-n): 21 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (17566) Minimum time to nap at first -spin exhaustion (-nap): 10 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (17565) Maximum time to nap at -spin exhaustion (-napmax): 250 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (18522) SSL No Host Verify (-nohostverify): Not Enabled 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (12273) SSL No Session Cache (-nosessioncache): Not Enabled 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (18521) SSL No Session Reuse (-nosessionreuse): Not Enabled 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (16689) Login Governor (-nGovernor): 0 of 32000 
+[2026/06/18@18:05:58.523+0200] P-42352      T-27168 I BROKER  0: (18398) Number of checkpoint statistics to record (-numCheckpointStats): 32 
+[2026/06/18@18:05:58.524+0200] P-42352      T-27168 I BROKER  0: (19122) Omit .lg file messages (-omitLgMsgs):  
+[2026/06/18@18:05:58.524+0200] P-42352      T-27168 I BROKER  0: (8527)  Storage object cache size (-omsize): 1024 
+[2026/06/18@18:05:58.524+0200] P-42352      T-27168 I BROKER  0: (20842) Database startup parameter file (-pf): Not Enabled 
+[2026/06/18@18:05:58.525+0200] P-42352      T-27168 I BROKER  0: (13870) Database Service Manager - IPC Queue Size (-pica): 128.0 KBytes 
+[2026/06/18@18:05:58.525+0200] P-42352      T-27168 I BROKER  0: (19347) Maximum nap time when blocked to access PICA queue (-picanap): 1 ms. 
+[2026/06/18@18:05:58.525+0200] P-42352      T-27168 I BROKER  0: (17802) Shared memory segments locked (-pinshm): Not Enabled 
+[2026/06/18@18:05:58.525+0200] P-42352      T-27168 I BROKER  0: (16953) Use pollset mechanism for client/server (-pollset): Not Enabled 
+[2026/06/18@18:05:58.526+0200] P-42352      T-27168 I BROKER  0: (16955) Delay first prefetch message (-prefetchDelay): Enabled 
+[2026/06/18@18:05:58.526+0200] P-42352      T-27168 I BROKER  0: (16956) Prefetch message fill percentage (-prefetchFactor): 100 
+[2026/06/18@18:05:58.526+0200] P-42352      T-27168 I BROKER  0: (16957) Minimum records in prefetch msg (-prefetchNumRecs): 64 
+[2026/06/18@18:05:58.527+0200] P-42352      T-27168 I BROKER  0: (16958) Suspension queue poll priority (-prefetchPriority): 1 
+[2026/06/18@18:05:58.527+0200] P-42352      T-27168 I BROKER  0: (17568) APW queue scan cycle time in milliseconds (-pwqdelay): 100 
+[2026/06/18@18:05:58.527+0200] P-42352      T-27168 I BROKER  0: (17569) APW minimum queue length before write (-pwqmin): 1 
+[2026/06/18@18:05:58.527+0200] P-42352      T-27168 I BROKER  0: (17570) APW buffer scan cycle time in seconds (-pwsdelay): 1 
+[2026/06/18@18:05:58.527+0200] P-42352      T-27168 I BROKER  0: (17571) APW maximum number of buffers to scan per cycle (-pwscan): 5 
+[2026/06/18@18:05:58.528+0200] P-42352      T-27168 I BROKER  0: (17572) APW maximum number of buffers to write per cycle (-pwwmax): 25 
+[2026/06/18@18:05:58.528+0200] P-42352      T-27168 I BROKER  0: (4247)  Before-Image File I/O (-r -R): Reliable 
+[2026/06/18@18:05:58.528+0200] P-42352      T-27168 I BROKER  0: (17563) Record free chain search depth factor (-recspacesearchdepth): 5 
+[2026/06/18@18:05:58.528+0200] P-42352      T-27168 I BROKER  0: (19133) Schema Lock Wait Queue (-schlockwq): Not Enabled 
+[2026/06/18@18:05:58.528+0200] P-42352      T-27168 I BROKER  0: (18478) Security cache size (-secsize): 512 
+[2026/06/18@18:05:58.529+0200] P-42352      T-27168 I BROKER  0: (6526)  Number of Semaphore Sets (-semsets): 3 
+[2026/06/18@18:05:58.529+0200] P-42352      T-27168 I BROKER  0: (12264) SSL Session Timeout (-sessiontimeout): 0 
+[2026/06/18@18:05:58.529+0200] P-42352      T-27168 I BROKER  0: (13924) Maximum Shared Memory Segment Size (-shmsegsize): 1024 Mb 
+[2026/06/18@18:05:58.529+0200] P-42352      T-27168 I BROKER  0: (4243)  Current Spin Lock Tries (-spin): 132000 
+[2026/06/18@18:05:58.529+0200] P-42352      T-27168 I BROKER  0: (17803) SSL Encryption for TCP/IP connections (-ssl): Not Enabled 
+[2026/06/18@18:05:58.530+0200] P-42352      T-27168 I BROKER  0: (19329) Database server side join support (-ssj): Enabled 
+[2026/06/18@18:05:58.531+0200] P-42352      T-27168 I BROKER  0: (20402) STS Socket Reuse (-stsSocketReuse): Yes 
+[2026/06/18@18:05:58.531+0200] P-42352      T-27168 I BROKER  0: (18525) STS Debug Logging Level default (-stslogginglevel): 0 
+[2026/06/18@18:05:58.531+0200] P-42352      T-27168 I BROKER  0: (17556) Number of tables included in statistics collection (-tablerangesize): 50 
+[2026/06/18@18:05:58.531+0200] P-42352      T-27168 I BROKER  0: (19151) Threaded database server (-threadedServer): Enabled 
+[2026/06/18@18:05:58.532+0200] P-42352      T-27168 I BROKER  0: (19159) Thread stack size for threaded database servers (-threadedServerStack): 512Kb 
+[2026/06/18@18:05:58.532+0200] P-42352      T-27168 I BROKER  0: (18407) Number of indexes per user included in statistics collection (-userindexrangesize): 50 
+[2026/06/18@18:05:58.532+0200] P-42352      T-27168 I BROKER  0: (19089) Number of lobs per user included in statistics collection (-userlobrangesize): 50 
+[2026/06/18@18:05:58.533+0200] P-42352      T-27168 I BROKER  0: (18118) User Notification Time (-usernotifytime): 600 seconds 
+[2026/06/18@18:05:58.533+0200] P-42352      T-27168 I BROKER  0: (18405) Number of tables per user included in statistics collection (-usertablerangesize): 50 
+[2026/06/18@18:05:58.534+0200] P-42352      T-27168 I BROKER  0: (14017) Area block consistency check in area "" (-AreaCheck): Not Enabled 
+[2026/06/18@18:05:58.534+0200] P-42352      T-27168 I BROKER  0: (4239)  Number of Database Buffers (-B): 3000 
+[2026/06/18@18:05:58.534+0200] P-42352      T-27168 I BROKER  0: (17562) Number of Alternate Database Buffers (-B2): 0 
+[2026/06/18@18:05:58.534+0200] P-42352      T-27168 I BROKER  0: (9422)  Maximum private buffers per user (-Bpmax): 64 
+[2026/06/18@18:05:58.535+0200] P-42352      T-27168 I BROKER  0: (14016) Database block consistency check (-DbCheck): Not Enabled 
+[2026/06/18@18:05:58.535+0200] P-42352      T-27168 I BROKER  0: (13869) Database Service Manager - Service(s) to start (-DBService): Not Enabled 
+[2026/06/18@18:05:58.535+0200] P-42352      T-27168 I BROKER  0: (10535) Enhanced Read-Only mode (-ERO): Not Enabled 
+[2026/06/18@18:05:58.536+0200] P-42352      T-27168 I BROKER  0: (4237)  Force Access (-F): Not Enabled 
+[2026/06/18@18:05:58.536+0200] P-42352      T-27168 I BROKER  0: (4249)  Before-Image Truncate Interval (-G): 0 
+[2026/06/18@18:05:58.536+0200] P-42352      T-27168 I BROKER  0: (4261)  Host Name (-H): 7F2D044 
+[2026/06/18@18:05:58.536+0200] P-42352      T-27168 I BROKER  0: (14018) Index block consistency check in index "", partitionID -32767(-IndexCheck): Not Enabled 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (4241)  Current Size of Lock Table (-L): 8192 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (16688) Lock Governor (-LGovernor): 0% 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (4257)  Maximum Number of Clients Per Server (-Ma): 5 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (14015) Memory overwrite check (-MemCheck): Not Enabled 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (4245)  Delay of Before-Image Flush (-Mf): 3 
+[2026/06/18@18:05:58.537+0200] P-42352      T-27168 I BROKER  0: (4259)  Minimum Clients Per Server (-Mi): 1 
+[2026/06/18@18:05:58.538+0200] P-42352      T-27168 I BROKER  0: (12818) Message Buffer Size (-Mm): 8192 
+[2026/06/18@18:05:58.538+0200] P-42352      T-27168 I BROKER  0: (4258)  Maximum Number of Servers (-Mn): 5 
+[2026/06/18@18:05:58.538+0200] P-42352      T-27168 I BROKER  0: (12819) Servers per Protocol (-Mp): 0 
+[2026/06/18@18:05:58.539+0200] P-42352      T-27168 I BROKER  0: (5647)  Maximum Servers Per Broker (-Mpb): 0 
+[2026/06/18@18:05:58.539+0200] P-42352      T-27168 I BROKER  0: (4240)  Excess Shared Memory Size (-Mxs): 39 
+[2026/06/18@18:05:58.539+0200] P-42352      T-27168 I BROKER  0: (4263)  Network Type (-N): TCP 
+[2026/06/18@18:05:58.539+0200] P-42352      T-27168 I BROKER  0: (16954) Server network message wait time (-Nmsgwait): 2 
+[2026/06/18@18:05:58.540+0200] P-42352      T-27168 I BROKER  0: (10357) Pending client connection timeout (-PendConnTime): 0 
+[2026/06/18@18:05:58.540+0200] P-42352      T-27168 I BROKER  0: (4262)  Service Name (-S): 20001 
+[2026/06/18@18:05:58.540+0200] P-42352      T-27168 I BROKER  0: (17804) Broker server group support (-ServerType): BOTH 
+[2026/06/18@18:05:58.541+0200] P-42352      T-27168 I BROKER  0: (19342) SQL Autonomous Update Statistics (-SQLAutoStats): OFF 
+[2026/06/18@18:05:58.541+0200] P-42352      T-27168 I BROKER  0: (10028) SQL Server Max Open Cursors (-SQLCursors): 50 
+[2026/06/18@18:05:58.541+0200] P-42352      T-27168 I BROKER  0: (20037) SQL Enable Core Generation (-SQLEnableCoreGeneration): OFF 
+[2026/06/18@18:05:58.542+0200] P-42352      T-27168 I BROKER  0: (20038) SQL Failure Driven Log (-SQLFailureDrivenLog): OFF 
+[2026/06/18@18:05:58.542+0200] P-42352      T-27168 I BROKER  0: (17567) Number of seconds for a SQL client to wait for a lock conflict to be resolved (-SQLLockWaitTimeout): 5. 
+[2026/06/18@18:05:58.542+0200] P-42352      T-27168 I BROKER  0: (19134) SQL rowid identifier (-SQLQuotedRowid): Standard 
+[2026/06/18@18:05:58.542+0200] P-42352      T-27168 I BROKER  0: (10026) SQL Server Stack Size (-SQLStack): 1000 
+[2026/06/18@18:05:58.543+0200] P-42352      T-27168 I BROKER  0: (10027) SQL Server Statement Cache Size (-SQLStmtCache): 100 
+[2026/06/18@18:05:58.543+0200] P-42352      T-27168 I BROKER  0: (10029) Size [1K byte units] of SQL Server temp table buffer (-SQLTempBuff): 1000 
+[2026/06/18@18:05:58.543+0200] P-42352      T-27168 I BROKER  0: (10030) Size [1K byte units] of SQL Server temp table disk storage (-SQLTempDisk): 500000 
+[2026/06/18@18:05:58.544+0200] P-42352      T-27168 I BROKER  0: (10031) Size [1K byte units] of SQL Server temp table data page (-SQLTempPgSize): 8 
+[2026/06/18@18:05:58.544+0200] P-42352      T-27168 I BROKER  0: (17955) Authorized data truncation (-SQLTruncateTooLarge): OFF 
+[2026/06/18@18:05:58.544+0200] P-42352      T-27168 I BROKER  0: (18156) SQL Autonomous Schema Update (-SQLWidthUpdate): OFF 
+[2026/06/18@18:05:58.544+0200] P-42352      T-27168 I BROKER  0: (14019) Record block consistency check in table "", partitionID -32767(-TableCheck): Not Enabled 
+[2026/06/18@18:05:58.545+0200] P-42352      T-27168 I BROKER  0: (17717) TXE Lock retry limit (-TXERetryLimit): 0 
+[2026/06/18@18:05:58.545+0200] P-42352      T-27168 I BROKER  0: (13896) TXE Commit lock skip limit (-TXESkipLimit): 10000 
+[2026/06/18@18:05:58.546+0200] P-42352      T-27168 I BROKER  0: (10836) Database connections are not allowed at this time. 
+[2026/06/18@18:05:58.547+0200] P-42352      T-27168 I BROKER  0: (10471) Database connections have been enabled. 
+[2026/06/18@18:09:38.173+0200] P-88708      T-80156 I TSRV    1: (452)   Login by khoury on CON:. 
+[2026/06/18@18:09:38.220+0200] P-88708      T-80156 I TSRV    1: (19552) Server with server num 1 logged in. 
+[2026/06/18@18:09:38.220+0200] P-88708      T-80156 I TSRV    1: (5646)  Started on port 3004 using TCP IPV4 address 0.0.0.0, pid 88708. 
+[2026/06/18@18:09:38.918+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:6736:AS-ResourceMgr. 
+[2026/06/18@18:09:38.919+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:09:38.919+0200] P-88708      T-82728 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:09:38.940+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:09:38.948+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:09:39.098+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:6736:AS-4. 
+[2026/06/18@18:09:39.098+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:09:39.098+0200] P-88708      T-82728 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:09:39.110+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:09:39.382+0200] P-50572      T-9724  I TSRV    3: (452)   Login by khoury on CON:. 
+[2026/06/18@18:09:39.400+0200] P-50572      T-9724  I TSRV    3: (19552) Server with server num 2 logged in. 
+[2026/06/18@18:09:39.400+0200] P-50572      T-9724  I TSRV    3: (5646)  Started on port 3005 using TCP IPV4 address 0.0.0.0, pid 50572. 
+[2026/06/18@18:09:40.319+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:6736:AS-7. 
+[2026/06/18@18:09:40.319+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:09:40.320+0200] P-50572      T-84516 I TSRV    3: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@18:09:40.332+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:09:47.092+0200] P-73492      T-22804 I TSRV    5: (452)   Login by khoury on CON:. 
+[2026/06/18@18:09:47.113+0200] P-73492      T-22804 I TSRV    5: (19552) Server with server num 3 logged in. 
+[2026/06/18@18:09:47.113+0200] P-73492      T-22804 I TSRV    5: (5646)  Started on port 3006 using TCP IPV4 address 0.0.0.0, pid 73492. 
+[2026/06/18@18:09:48.028+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:45932:AS-ResourceMgr. 
+[2026/06/18@18:09:48.028+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:09:48.029+0200] P-73492      T-74500 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:09:48.043+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:09:48.050+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:09:48.245+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:45932:AS-4. 
+[2026/06/18@18:09:48.245+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:09:48.245+0200] P-73492      T-74500 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:09:48.259+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:09:48.522+0200] P-76724      T-77192 I TSRV    7: (452)   Login by khoury on CON:. 
+[2026/06/18@18:09:48.538+0200] P-76724      T-77192 I TSRV    7: (19552) Server with server num 4 logged in. 
+[2026/06/18@18:09:48.538+0200] P-76724      T-77192 I TSRV    7: (5646)  Started on port 3007 using TCP IPV4 address 0.0.0.0, pid 76724. 
+[2026/06/18@18:09:49.460+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:45932:AS-7. 
+[2026/06/18@18:09:49.461+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:09:49.461+0200] P-76724      T-54376 I TSRV    7: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@18:09:49.479+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:10:29.292+0200] P-88708      T-66428 I TSRV    1: (742)   Login usernum 9, userid khoury client type ABL , on 7F2D044 using TCP/IP IPV4 address 172.22.64.1. 
+[2026/06/18@18:10:29.292+0200] P-88708      T-66428 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/18@18:10:29.292+0200] P-88708      T-66428 I TSRV    1: (17961) User 9 set tty to 7F2D044. 
+[2026/06/18@18:10:29.305+0200] P-88708      T-66428 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/18@18:10:48.464+0200] P-88708      T-66428 I TSRV    1: (739)   Logout usernum 9, userid khoury, on 7F2D044. 
+[2026/06/18@18:11:27.416+0200] P-88708      T-66428 I TSRV    1: (742)   Login usernum 9, userid khoury client type ABL , on 7F2D044 using TCP/IP IPV4 address 172.22.64.1. 
+[2026/06/18@18:11:27.416+0200] P-88708      T-66428 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/18@18:11:27.416+0200] P-88708      T-66428 I TSRV    1: (17961) User 9 set tty to 7F2D044. 
+[2026/06/18@18:11:27.436+0200] P-88708      T-66428 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/18@18:23:48.310+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@18:23:48.310+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:23:48.401+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@18:23:48.406+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:24:58.235+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:39440:AS-ResourceMgr. 
+[2026/06/18@18:24:58.235+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:24:58.235+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:24:58.251+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:24:58.257+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:24:58.421+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:39440:AS-4. 
+[2026/06/18@18:24:58.421+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:24:58.421+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:24:58.435+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:24:58.586+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:39440:AS-7. 
+[2026/06/18@18:24:58.586+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:24:58.586+0200] P-73492      T-74500 I TSRV    5: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@18:24:58.602+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:25:06.580+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25352:AS-ResourceMgr. 
+[2026/06/18@18:25:06.581+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:25:06.581+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:25:06.599+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:25:06.606+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:25:06.764+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25352:AS-4. 
+[2026/06/18@18:25:06.765+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:25:06.765+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:25:06.786+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:25:06.921+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25352:AS-7. 
+[2026/06/18@18:25:06.922+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:25:06.922+0200] P-88708      T-82728 I TSRV    1: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@18:25:06.940+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:39:41.175+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@18:39:41.176+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:39:41.176+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@18:39:41.181+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:40:20.871+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:14364:AS-ResourceMgr. 
+[2026/06/18@18:40:20.872+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:40:20.872+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:40:20.892+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:40:20.900+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:40:21.088+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:14364:AS-4. 
+[2026/06/18@18:40:21.089+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:40:21.089+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:40:21.105+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:40:21.264+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:14364:AS-7. 
+[2026/06/18@18:40:21.264+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:40:21.264+0200] P-73492      T-74500 I TSRV    5: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@18:40:21.281+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:40:28.803+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37304:AS-ResourceMgr. 
+[2026/06/18@18:40:28.803+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:40:28.804+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:40:28.825+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:40:28.832+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:40:28.999+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37304:AS-4. 
+[2026/06/18@18:40:28.999+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:40:28.999+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:40:29.016+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:40:29.119+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37304:AS-7. 
+[2026/06/18@18:40:29.119+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:40:29.120+0200] P-88708      T-82728 I TSRV    1: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@18:40:29.137+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:51:16.445+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:16.445+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:16.445+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:16.449+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:41.455+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25412:AS-ResourceMgr. 
+[2026/06/18@18:51:41.455+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:51:41.455+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:51:41.484+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:51:41.491+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:41.684+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25412:AS-4. 
+[2026/06/18@18:51:41.685+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:51:41.685+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@18:51:41.699+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@18:51:41.840+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:25412:AS-7. 
+[2026/06/18@18:51:41.840+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:51:41.840+0200] P-73492      T-74500 I TSRV    5: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@18:51:41.856+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@18:51:46.729+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:27716:AS-ResourceMgr. 
+[2026/06/18@18:51:46.730+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:51:46.730+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:51:46.746+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:51:46.752+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@18:51:46.923+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:27716:AS-4. 
+[2026/06/18@18:51:46.923+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:51:46.924+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@18:51:46.940+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@18:51:47.114+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:27716:AS-7. 
+[2026/06/18@18:51:47.114+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@18:51:47.115+0200] P-88708      T-82728 I TSRV    1: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@18:51:47.134+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@19:02:31.164+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@19:02:31.164+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@19:02:31.169+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@19:02:31.170+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@19:03:40.376+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59712:AS-ResourceMgr. 
+[2026/06/18@19:03:40.377+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@19:03:40.377+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@19:03:40.393+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@19:03:40.416+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@19:03:40.594+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59712:AS-4. 
+[2026/06/18@19:03:40.595+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@19:03:40.595+0200] P-50572      T-84516 I TSRV    3: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@19:03:40.608+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@19:03:40.752+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59712:AS-7. 
+[2026/06/18@19:03:40.752+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@19:03:40.752+0200] P-73492      T-74500 I TSRV    5: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@19:03:40.768+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@19:03:46.681+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:31660:AS-ResourceMgr. 
+[2026/06/18@19:03:46.681+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@19:03:46.682+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@19:03:46.699+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@19:03:46.705+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@19:03:46.865+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:31660:AS-4. 
+[2026/06/18@19:03:46.865+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@19:03:46.865+0200] P-76724      T-54376 I TSRV    7: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@19:03:46.878+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@19:03:47.007+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:31660:AS-7. 
+[2026/06/18@19:03:47.007+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@19:03:47.008+0200] P-88708      T-82728 I TSRV    1: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@19:03:47.027+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@19:05:17.731+0200] P-50572      T-43868 I TSRV    3: (742)   Login usernum 10, userid khoury client type ABL , on 7F2D044 using TCP/IP IPV4 address 172.22.64.1. 
+[2026/06/18@19:05:17.731+0200] P-50572      T-43868 I TSRV    3: (7129)  Usr 10 set name to khoury. 
+[2026/06/18@19:05:17.731+0200] P-50572      T-43868 I TSRV    3: (17961) User 10 set tty to 7F2D044. 
+[2026/06/18@19:05:17.746+0200] P-50572      T-43868 I TSRV    3: (7129)  Usr 10 set name to khoury. 
+[2026/06/18@19:05:39.867+0200] P-73492      T-33308 I TSRV    5: (742)   Login usernum 11, userid khoury client type ABL , on 7F2D044 using TCP/IP IPV4 address 172.22.64.1. 
+[2026/06/18@19:05:39.867+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@19:05:39.868+0200] P-73492      T-33308 I TSRV    5: (17961) User 11 set tty to 7F2D044. 
+[2026/06/18@19:05:39.877+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@19:14:46.291+0200] P-73492      T-33308 I TSRV    5: (739)   Logout usernum 11, userid khoury, on 7F2D044. 
+[2026/06/18@21:31:10.354+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@21:31:10.375+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@21:31:10.409+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@21:31:10.412+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@21:32:49.919+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:61888:AS-ResourceMgr. 
+[2026/06/18@21:32:49.919+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:32:49.919+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@21:32:49.953+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:32:49.966+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@21:32:50.155+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:61888:AS-4. 
+[2026/06/18@21:32:50.155+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:32:50.155+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@21:32:50.172+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:32:50.358+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:61888:AS-7. 
+[2026/06/18@21:32:50.358+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@21:32:50.358+0200] P-76724      T-54376 I TSRV    7: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@21:32:50.377+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@21:32:58.069+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:46512:AS-ResourceMgr. 
+[2026/06/18@21:32:58.070+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:32:58.070+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@21:32:58.092+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:32:58.100+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@21:32:58.264+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:46512:AS-4. 
+[2026/06/18@21:32:58.265+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:32:58.265+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@21:32:58.282+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:32:58.439+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:46512:AS-7. 
+[2026/06/18@21:32:58.439+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@21:32:58.440+0200] P-50572      T-84516 I TSRV    3: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@21:32:58.461+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@21:45:11.937+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@21:45:11.964+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@21:45:11.977+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@21:46:41.280+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:94640:AS-ResourceMgr. 
+[2026/06/18@21:46:41.280+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:46:41.280+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@21:46:41.303+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:46:41.311+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@21:46:41.515+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:94640:AS-4. 
+[2026/06/18@21:46:41.515+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:46:41.515+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@21:46:41.534+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@21:46:41.719+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:94640:AS-7. 
+[2026/06/18@21:46:41.720+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@21:46:41.720+0200] P-76724      T-54376 I TSRV    7: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@21:46:41.742+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@21:46:52.104+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:92980:AS-ResourceMgr. 
+[2026/06/18@21:46:52.105+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:46:52.105+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@21:46:52.136+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:46:52.148+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@21:46:52.319+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:92980:AS-4. 
+[2026/06/18@21:46:52.319+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:46:52.320+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@21:46:52.345+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@21:46:52.495+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:92980:AS-7. 
+[2026/06/18@21:46:52.496+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@21:46:52.496+0200] P-50572      T-84516 I TSRV    3: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@21:46:52.539+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@21:59:06.193+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@21:59:06.198+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@21:59:06.208+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@21:59:06.210+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@22:00:16.522+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59264:AS-ResourceMgr. 
+[2026/06/18@22:00:16.523+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:00:16.523+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@22:00:16.545+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:00:16.551+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@22:00:16.739+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59264:AS-4. 
+[2026/06/18@22:00:16.739+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:00:16.739+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@22:00:16.755+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:00:16.930+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:59264:AS-7. 
+[2026/06/18@22:00:16.930+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@22:00:16.930+0200] P-76724      T-54376 I TSRV    7: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@22:00:16.952+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@22:00:22.562+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:71516:AS-ResourceMgr. 
+[2026/06/18@22:00:22.563+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:00:22.563+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@22:00:22.595+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:00:22.603+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@22:00:22.782+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:71516:AS-4. 
+[2026/06/18@22:00:22.783+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:00:22.783+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@22:00:22.805+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:00:22.925+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:71516:AS-7. 
+[2026/06/18@22:00:22.925+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@22:00:22.925+0200] P-50572      T-84516 I TSRV    3: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@22:00:22.947+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@22:04:06.947+0200] P-76724      T-54376 I TSRV    7: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:06.947+0200] P-50572      T-84516 I TSRV    3: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:06.963+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:06.963+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:38.071+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:64212:AS-ResourceMgr. 
+[2026/06/18@22:04:38.071+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:04:38.071+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@22:04:38.090+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:04:38.097+0200] P-73492      T-74500 I TSRV    5: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:38.286+0200] P-73492      T-74500 I TSRV    5: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:64212:AS-4. 
+[2026/06/18@22:04:38.287+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:04:38.287+0200] P-73492      T-74500 I TSRV    5: (17961) User 2 set tty to 7F2D044. 
+[2026/06/18@22:04:38.299+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to khoury. 
+[2026/06/18@22:04:38.434+0200] P-76724      T-54376 I TSRV    7: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:64212:AS-7. 
+[2026/06/18@22:04:38.435+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@22:04:38.435+0200] P-76724      T-54376 I TSRV    7: (17961) User 4 set tty to 7F2D044. 
+[2026/06/18@22:04:38.453+0200] P-76724      T-54376 I TSRV    7: (7129)  Usr 4 set name to khoury. 
+[2026/06/18@22:04:43.686+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:35308:AS-ResourceMgr. 
+[2026/06/18@22:04:43.686+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:04:43.687+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@22:04:43.706+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:04:43.713+0200] P-88708      T-82728 I TSRV    1: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/18@22:04:43.902+0200] P-88708      T-82728 I TSRV    1: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:35308:AS-4. 
+[2026/06/18@22:04:43.902+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:04:43.902+0200] P-88708      T-82728 I TSRV    1: (17961) User 6 set tty to 7F2D044. 
+[2026/06/18@22:04:43.922+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to khoury. 
+[2026/06/18@22:04:44.032+0200] P-50572      T-84516 I TSRV    3: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:35308:AS-7. 
+[2026/06/18@22:04:44.033+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@22:04:44.033+0200] P-50572      T-84516 I TSRV    3: (17961) User 8 set tty to 7F2D044. 
+[2026/06/18@22:04:44.052+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to khoury. 
+[2026/06/18@22:23:08.590+0200] P-73492      T-33308 I TSRV    5: (742)   Login usernum 11, userid khoury client type ABL , on 7F2D044 using TCP/IP IPV4 address 172.22.64.1. 
+[2026/06/18@22:23:08.591+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@22:23:08.591+0200] P-73492      T-33308 I TSRV    5: (17961) User 11 set tty to 7F2D044. 
+[2026/06/18@22:23:08.605+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@22:23:46.986+0200] P-73492      T-33308 I TSRV    5: (739)   Logout usernum 11, userid khoury, on 7F2D044. 
+[2026/06/18@22:24:14.812+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:24:15.030+0200] P-88708      T-82728 I TSRV    1: (7129)  Usr 6 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:26:46.620+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:26:47.039+0200] P-73492      T-33308 I TSRV    5: (742)   Login usernum 11, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:35308:AS-8. 
+[2026/06/18@22:26:47.039+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@22:26:47.040+0200] P-73492      T-33308 I TSRV    5: (17961) User 11 set tty to 7F2D044. 
+[2026/06/18@22:26:47.076+0200] P-73492      T-33308 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/18@22:26:47.530+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:27:40.443+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:27:40.632+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:30:28.164+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:31:22.082+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:31:22.313+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:33:26.564+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:33:26.792+0200] P-50572      T-84516 I TSRV    3: (7129)  Usr 8 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/18@22:45:01.353+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+
+                Fri Jun 19 09:40:09 2026
+[2026/06/19@09:40:09.830+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/19@09:42:17.199+0200] P-73492      T-74500 I TSRV    5: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+
+                Fri Jun 19 12:13:13 2026
+[2026/06/19@12:13:13.860+0200] P-46036      T-43304 I BROKER  0: (333)   Multi-user session begin. 
+[2026/06/19@12:13:13.862+0200] P-46036      T-43304 I BROKER  0: (5326)  Begin Physical Redo Phase at 0 . 
+[2026/06/19@12:13:13.876+0200] P-46036      T-43304 I BROKER  0: (7161)  Physical Redo Phase Completed at blk 10 off 7161 upd 238. 
+[2026/06/19@12:13:13.876+0200] P-46036      T-43304 I BROKER  0: (13547) At end of Physical redo, transaction table size is 5440. 
+[2026/06/19@12:13:13.881+0200] P-46036      T-43304 I BROKER  0: (452)   Login by khoury on CON:. 
+[2026/06/19@12:13:13.892+0200] P-46036      T-43304 I BROKER  0: (5644)  Started for 20001 using TCP IPV4 address 0.0.0.0, pid 46036. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19117) This installation is licensed to: Progress by C:\DLC\128\progress.cfg 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: 4GL Development System installed with serial number: 6275053 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Client Networking installed with serial number: 6275054 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Auth Gateway installed with serial number: 6287659 expiration: 11/14/2025. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE CDC for Enterprise installed with serial number: 6275056 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE CDC for Workgroup installed with serial number: 6275057 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OpenEdge Mgt. SE installed with serial number: 6275058 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE DataServer MS SQL S installed with serial number: 6275063 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE DataServer for Orac installed with serial number: 6275064 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Enterprise RDBMS installed with serial number: 6275065 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Multi-tenant Tables installed with serial number: 6275066 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Personal RDBMS installed with serial number: 6275067 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Adv. Ent. RDBMS installed with serial number: 6275068 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Studio installed with serial number: 6275069 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OpenEdge TDE installed with serial number: 6275070 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Ultra Controls .NET installed with serial number: 6275071 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OE Workgroup RDBMS installed with serial number: 6275072 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: PASOE Lite installed with serial number: 6275073 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Progress Dev Studio OE installed with serial number: 6275074 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Query/RESULTS installed with serial number: 6275077 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: SNMP Adapter installed with serial number: 6275078 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Table Partitioning installed with serial number: 6275079 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Pro2 CDC Enterprise installed with serial number: 6275080 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Progress OEAS installed with serial number: 6275081 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OpenEdge Replication installed with serial number: 6275059 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: OpenEdge Repl Plus installed with serial number: 6275061 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Progress Dev AS for OE installed with serial number: 6275075 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19116) Product: Progress ProdAS for OE installed with serial number: 6275076 expiration: None. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (4234)  Progress OpenEdge Release 12.8 build 1274 SP11 on WINNT . 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (19552) Broker with server num 0 logged in. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (4281)  Server started by khoury on CON:. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (6574)  Started using pid: 46036. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (9426)  Large database file access has been enabled. 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (15219) Encryption enabled: 0 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (15824) Multi-tenancy enabled: 0 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (15824) Table Partitioning enabled: 0 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (15824) Authentication Gateway enabled: 0 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (9336)  Created shared memory with segment_id: 1 
+[2026/06/19@12:13:13.893+0200] P-46036      T-43304 I BROKER  0: (4250)  Before-Image Cluster Size: 524288 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4251)  Before-Image Block Size: 8192 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4255)  After-Image Block Size: 8192. 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20665) Database Code Page: iso8859-1. 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20666) Database Collation: basic. 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20667) Word-rule File Number: 0. 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20668) Word-rule File CRC: 0. 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (13873) After-image Management Archival Directory List (-aiarcdir): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (13874) Create After-image Management Archival Directory(s) (-aiarcdircreate): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (13872) After-image Management Archival Interval (-aiarcinterval): -1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4256)  Number of After-Image Buffers (-aibufs): 64 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4254)  After-Image Stall (-aistall): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (17555) Starting index number for statistics range (-baseindex): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19091) Starting LOB number for statistics range (-baselob): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (17554) Starting table number for statistics range (-basetable): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18406) Starting index number per user for statistics range (-baseuserindex): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19092) Starting LOB number per user for statistics range (-baseuserlob): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18404) Starting table number per user for statistics range (-baseusertable): 1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4252)  Number of Before-Image Buffers (-bibufs): 64 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20052) BI Scan Time (-biscantime): 10 seconds 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (6552)  BI File Threshold Stall (-bistall): Disabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (9238)  BI File Threshold size (-bithold): 0.0   Bytes 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (6573)  Database Blocksize (-blocksize): 4096 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (12812) BIW writer delay (-bwdelay): 30 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (12813) Allowed index cursors (-c): 84 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18495) CDC cache size (-cdcsize): 200k bytes 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (12265) SSL Certificate Store Path (-certstorepath): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20643) Client Database-Request Statement Caching directory (-clstmtcachedir): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4264)  Character Set (-cpinternal): ISO8859-1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19442) C stack print option (-cstackPrintopt): 0 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4235)  Physical Database Name (-db): C:/Projets/keycloak-angular-multi-tenant/db/context 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19519) Number of DB Notification Operations (-dbnotifyops): 16 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19511) DB Notification Time (-dbnotifytime): 30 seconds 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18558) Diagnostic directory (-diagDir): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18576) Diagnostic events value (-diagEvent): LockTable:0,BiThold:0,SysErr:0 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18560) Diagnostic event level (-diagEvtLevel): 0 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18561) Diagnostic field separator (-diagFS): ' ' 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18579) Diagnostic data format (-diagFormat): csv 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18562) Diagnostic pause length (-diagPause): 0 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18563) Diagnostic prefix value (-diagPrefix): diagEvent_ 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (18580) Diagnostic procedure (-diagProc): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4238)  Direct I/O (-directio): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4236)  Database Type (-dt): PROGRESS 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (15218) Encryption cache size (-ecsize): 1000 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (12814) Group delay (-groupdelay): 10 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4242)  Hash Table Entries (-hash): 887 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19195) Buffer pool hash table latch percentage (-hashLatchFactor): 10 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (20436) Allow hostname alias or specific IP address for the -H parameter (-hostnameAliasing): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (4244)  Crash Recovery (-i): Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (17557) Number of indexes included in statistics collection (-indexrangesize): 50 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (14268) TCP/IP Version (-ipver): IPV4 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (12263) SSL Key Alias Name (-keyalias): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19216) Database log file archive directory (-lgArchiveDir): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19215) Archive database log file before truncation (-lgArchiveEnable): Not Enabled 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19213) Frequency of database log file truncation (-lgTruncateFrequency): -1 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19214) The maximum size the database log file can grow before truncation (-lgTruncateSize): 0MB 
+[2026/06/19@12:13:13.894+0200] P-46036      T-43304 I BROKER  0: (19212) Time of day for the database log file truncation (-lgTruncateTime): 00:00 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (19137) Limit .lg file payload (-limitLgPayload): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (12815) Lock table hash table size (-lkhash): 1237 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17805) Original Lock Release Algorithm (-lkrela): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (19090) Number of LOBs included in statistics collection (-lobrangesize): 50 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17560) Number of LRU force skips (-lruskips): 100 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17561) Number of LRU2 force skips (-lru2skips): 100 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (13953) Maximum Area Number (-maxArea): 32000 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (5649)  Maximum Port for Auto Servers (-maxport): 5000 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (12540) Size of JTA transaction table (-maxxids): 100 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (5648)  Minimum Port for Auto Servers (-minport): 3000 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17564) Multi-tenancy partition cache size (-mtpmsize): 1024 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (12821) Use muxlatches (-mux): 1 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (4260)  Maximum Number of Users (-n): 21 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17566) Minimum time to nap at first -spin exhaustion (-nap): 10 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17565) Maximum time to nap at -spin exhaustion (-napmax): 250 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (18522) SSL No Host Verify (-nohostverify): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (12273) SSL No Session Cache (-nosessioncache): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (18521) SSL No Session Reuse (-nosessionreuse): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16689) Login Governor (-nGovernor): 0 of 32000 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (18398) Number of checkpoint statistics to record (-numCheckpointStats): 32 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (19122) Omit .lg file messages (-omitLgMsgs):  
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (8527)  Storage object cache size (-omsize): 1024 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (20842) Database startup parameter file (-pf): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (13870) Database Service Manager - IPC Queue Size (-pica): 128.0 KBytes 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (19347) Maximum nap time when blocked to access PICA queue (-picanap): 1 ms. 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17802) Shared memory segments locked (-pinshm): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16953) Use pollset mechanism for client/server (-pollset): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16955) Delay first prefetch message (-prefetchDelay): Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16956) Prefetch message fill percentage (-prefetchFactor): 100 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16957) Minimum records in prefetch msg (-prefetchNumRecs): 64 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (16958) Suspension queue poll priority (-prefetchPriority): 1 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17568) APW queue scan cycle time in milliseconds (-pwqdelay): 100 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17569) APW minimum queue length before write (-pwqmin): 1 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17570) APW buffer scan cycle time in seconds (-pwsdelay): 1 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17571) APW maximum number of buffers to scan per cycle (-pwscan): 5 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17572) APW maximum number of buffers to write per cycle (-pwwmax): 25 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (4247)  Before-Image File I/O (-r -R): Reliable 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17563) Record free chain search depth factor (-recspacesearchdepth): 5 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (19133) Schema Lock Wait Queue (-schlockwq): Not Enabled 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (18478) Security cache size (-secsize): 512 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (6526)  Number of Semaphore Sets (-semsets): 3 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (12264) SSL Session Timeout (-sessiontimeout): 0 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (13924) Maximum Shared Memory Segment Size (-shmsegsize): 1024 Mb 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (4243)  Current Spin Lock Tries (-spin): 132000 
+[2026/06/19@12:13:13.895+0200] P-46036      T-43304 I BROKER  0: (17803) SSL Encryption for TCP/IP connections (-ssl): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19329) Database server side join support (-ssj): Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (20402) STS Socket Reuse (-stsSocketReuse): Yes 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (18525) STS Debug Logging Level default (-stslogginglevel): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17556) Number of tables included in statistics collection (-tablerangesize): 50 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19151) Threaded database server (-threadedServer): Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19159) Thread stack size for threaded database servers (-threadedServerStack): 512Kb 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (18407) Number of indexes per user included in statistics collection (-userindexrangesize): 50 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19089) Number of lobs per user included in statistics collection (-userlobrangesize): 50 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (18118) User Notification Time (-usernotifytime): 600 seconds 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (18405) Number of tables per user included in statistics collection (-usertablerangesize): 50 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (14017) Area block consistency check in area "" (-AreaCheck): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4239)  Number of Database Buffers (-B): 3000 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17562) Number of Alternate Database Buffers (-B2): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (9422)  Maximum private buffers per user (-Bpmax): 64 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (14016) Database block consistency check (-DbCheck): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (13869) Database Service Manager - Service(s) to start (-DBService): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10535) Enhanced Read-Only mode (-ERO): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4237)  Force Access (-F): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4249)  Before-Image Truncate Interval (-G): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4261)  Host Name (-H): 7F2D044 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (14018) Index block consistency check in index "", partitionID -32767(-IndexCheck): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4241)  Current Size of Lock Table (-L): 8192 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (16688) Lock Governor (-LGovernor): 0% 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4257)  Maximum Number of Clients Per Server (-Ma): 5 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (14015) Memory overwrite check (-MemCheck): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4245)  Delay of Before-Image Flush (-Mf): 3 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4259)  Minimum Clients Per Server (-Mi): 1 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (12818) Message Buffer Size (-Mm): 8192 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4258)  Maximum Number of Servers (-Mn): 5 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (12819) Servers per Protocol (-Mp): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (5647)  Maximum Servers Per Broker (-Mpb): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4240)  Excess Shared Memory Size (-Mxs): 39 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4263)  Network Type (-N): TCP 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (16954) Server network message wait time (-Nmsgwait): 2 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10357) Pending client connection timeout (-PendConnTime): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (4262)  Service Name (-S): 20001 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17804) Broker server group support (-ServerType): BOTH 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19342) SQL Autonomous Update Statistics (-SQLAutoStats): OFF 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10028) SQL Server Max Open Cursors (-SQLCursors): 50 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (20037) SQL Enable Core Generation (-SQLEnableCoreGeneration): OFF 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (20038) SQL Failure Driven Log (-SQLFailureDrivenLog): OFF 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17567) Number of seconds for a SQL client to wait for a lock conflict to be resolved (-SQLLockWaitTimeout): 5. 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (19134) SQL rowid identifier (-SQLQuotedRowid): Standard 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10026) SQL Server Stack Size (-SQLStack): 1000 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10027) SQL Server Statement Cache Size (-SQLStmtCache): 100 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10029) Size [1K byte units] of SQL Server temp table buffer (-SQLTempBuff): 1000 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10030) Size [1K byte units] of SQL Server temp table disk storage (-SQLTempDisk): 500000 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (10031) Size [1K byte units] of SQL Server temp table data page (-SQLTempPgSize): 8 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17955) Authorized data truncation (-SQLTruncateTooLarge): OFF 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (18156) SQL Autonomous Schema Update (-SQLWidthUpdate): OFF 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (14019) Record block consistency check in table "", partitionID -32767(-TableCheck): Not Enabled 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (17717) TXE Lock retry limit (-TXERetryLimit): 0 
+[2026/06/19@12:13:13.896+0200] P-46036      T-43304 I BROKER  0: (13896) TXE Commit lock skip limit (-TXESkipLimit): 10000 
+[2026/06/19@12:13:13.917+0200] P-46036      T-43304 I BROKER  0: (10836) Database connections are not allowed at this time. 
+[2026/06/19@12:13:13.917+0200] P-46036      T-43304 I BROKER  0: (10471) Database connections have been enabled. 
+[2026/06/19@12:15:25.048+0200] P-38324      T-40400 I TSRV    1: (452)   Login by khoury on CON:. 
+[2026/06/19@12:15:25.109+0200] P-38324      T-40400 I TSRV    1: (19552) Server with server num 1 logged in. 
+[2026/06/19@12:15:25.109+0200] P-38324      T-40400 I TSRV    1: (5646)  Started on port 3001 using TCP IPV4 address 0.0.0.0, pid 38324. 
+[2026/06/19@12:15:34.016+0200] P-38324      T-46472 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:45904:AS-ResourceMgr. 
+[2026/06/19@12:15:34.016+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:15:34.016+0200] P-38324      T-46472 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/19@12:15:34.426+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:15:34.542+0200] P-38324      T-46472 I TSRV    1: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/19@12:15:35.033+0200] P-38324      T-46472 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:45904:AS-4. 
+[2026/06/19@12:15:35.033+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:15:35.033+0200] P-38324      T-46472 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/19@12:15:35.048+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:15:36.785+0200] P-17668      T-38208 I TSRV    3: (452)   Login by khoury on CON:. 
+[2026/06/19@12:15:36.793+0200] P-17668      T-38208 I TSRV    3: (19552) Server with server num 2 logged in. 
+[2026/06/19@12:15:36.793+0200] P-17668      T-38208 I TSRV    3: (5646)  Started on port 3003 using TCP IPV4 address 0.0.0.0, pid 17668. 
+[2026/06/19@12:15:37.722+0200] P-17668      T-40164 I TSRV    3: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:45904:AS-7. 
+[2026/06/19@12:15:37.722+0200] P-17668      T-40164 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/19@12:15:37.722+0200] P-17668      T-40164 I TSRV    3: (17961) User 4 set tty to 7F2D044. 
+[2026/06/19@12:15:37.737+0200] P-17668      T-40164 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/19@12:15:48.962+0200] P-37028      T-46256 I TSRV    5: (452)   Login by khoury on CON:. 
+[2026/06/19@12:15:48.981+0200] P-37028      T-46256 I TSRV    5: (19552) Server with server num 3 logged in. 
+[2026/06/19@12:15:48.982+0200] P-37028      T-46256 I TSRV    5: (5646)  Started on port 3004 using TCP IPV4 address 0.0.0.0, pid 37028. 
+[2026/06/19@12:15:49.961+0200] P-37028      T-47392 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:35832:AS-ResourceMgr. 
+[2026/06/19@12:15:49.961+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:15:49.961+0200] P-37028      T-47392 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/19@12:15:49.982+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:15:49.988+0200] P-37028      T-47392 I TSRV    5: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/19@12:15:50.157+0200] P-37028      T-47392 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:35832:AS-4. 
+[2026/06/19@12:15:50.157+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:15:50.157+0200] P-37028      T-47392 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/19@12:15:50.178+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:15:50.436+0200] P-47796      T-47788 I TSRV    7: (452)   Login by khoury on CON:. 
+[2026/06/19@12:15:50.456+0200] P-47796      T-47788 I TSRV    7: (19552) Server with server num 4 logged in. 
+[2026/06/19@12:15:50.456+0200] P-47796      T-47788 I TSRV    7: (5646)  Started on port 3005 using TCP IPV4 address 0.0.0.0, pid 47796. 
+[2026/06/19@12:15:51.359+0200] P-47796      T-29828 I TSRV    7: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 192.168.1.141 0:7F2D044:35832:AS-7. 
+[2026/06/19@12:15:51.359+0200] P-47796      T-29828 I TSRV    7: (7129)  Usr 8 set name to khoury. 
+[2026/06/19@12:15:51.359+0200] P-47796      T-29828 I TSRV    7: (17961) User 8 set tty to 7F2D044. 
+[2026/06/19@12:15:51.375+0200] P-47796      T-29828 I TSRV    7: (7129)  Usr 8 set name to khoury. 
+[2026/06/19@12:24:57.233+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/19@12:44:35.359+0200] P-38324      T-30668 I TSRV    1: (742)   Login usernum 9, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37988:AS-ResourceMgr. 
+[2026/06/19@12:44:35.359+0200] P-38324      T-30668 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/19@12:44:35.359+0200] P-38324      T-30668 I TSRV    1: (17961) User 9 set tty to 7F2D044. 
+[2026/06/19@12:44:35.370+0200] P-38324      T-30668 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/19@12:44:35.374+0200] P-38324      T-30668 I TSRV    1: (739)   Logout usernum 9, userid khoury, on 7F2D044. 
+[2026/06/19@12:44:35.555+0200] P-38324      T-30668 I TSRV    1: (742)   Login usernum 9, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37988:AS-4. 
+[2026/06/19@12:44:35.555+0200] P-38324      T-30668 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/19@12:44:35.555+0200] P-38324      T-30668 I TSRV    1: (17961) User 9 set tty to 7F2D044. 
+[2026/06/19@12:44:35.567+0200] P-38324      T-30668 I TSRV    1: (7129)  Usr 9 set name to khoury. 
+[2026/06/19@12:44:36.734+0200] P-17668      T-38460 I TSRV    3: (742)   Login usernum 10, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:37988:AS-7. 
+[2026/06/19@12:44:36.734+0200] P-17668      T-38460 I TSRV    3: (7129)  Usr 10 set name to khoury. 
+[2026/06/19@12:44:36.734+0200] P-17668      T-38460 I TSRV    3: (17961) User 10 set tty to 7F2D044. 
+[2026/06/19@12:44:36.747+0200] P-17668      T-38460 I TSRV    3: (7129)  Usr 10 set name to khoury. 
+[2026/06/19@12:44:41.199+0200] P-37028      T-43236 I TSRV    5: (742)   Login usernum 11, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:3496:AS-ResourceMgr. 
+[2026/06/19@12:44:41.200+0200] P-37028      T-43236 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/19@12:44:41.200+0200] P-37028      T-43236 I TSRV    5: (17961) User 11 set tty to 7F2D044. 
+[2026/06/19@12:44:41.220+0200] P-37028      T-43236 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/19@12:44:41.227+0200] P-37028      T-43236 I TSRV    5: (739)   Logout usernum 11, userid khoury, on 7F2D044. 
+[2026/06/19@12:44:41.371+0200] P-37028      T-43236 I TSRV    5: (742)   Login usernum 11, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:3496:AS-4. 
+[2026/06/19@12:44:41.371+0200] P-37028      T-43236 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/19@12:44:41.371+0200] P-37028      T-43236 I TSRV    5: (17961) User 11 set tty to 7F2D044. 
+[2026/06/19@12:44:41.390+0200] P-37028      T-43236 I TSRV    5: (7129)  Usr 11 set name to khoury. 
+[2026/06/19@12:44:41.598+0200] P-47796      T-49908 I TSRV    7: (742)   Login usernum 12, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:3496:AS-7. 
+[2026/06/19@12:44:41.598+0200] P-47796      T-49908 I TSRV    7: (7129)  Usr 12 set name to khoury. 
+[2026/06/19@12:44:41.598+0200] P-47796      T-49908 I TSRV    7: (17961) User 12 set tty to 7F2D044. 
+[2026/06/19@12:44:41.614+0200] P-47796      T-49908 I TSRV    7: (7129)  Usr 12 set name to khoury. 
+[2026/06/19@12:44:45.162+0200] P-17668      T-38460 I TSRV    3: (739)   Logout usernum 10, userid khoury, on 7F2D044. 
+[2026/06/19@12:44:45.162+0200] P-38324      T-30668 I TSRV    1: (739)   Logout usernum 9, userid khoury, on 7F2D044. 
+[2026/06/19@12:44:45.288+0200] P-37028      T-43236 I TSRV    5: (739)   Logout usernum 11, userid khoury, on 7F2D044. 
+[2026/06/19@12:44:45.288+0200] P-47796      T-49908 I TSRV    7: (739)   Logout usernum 12, userid khoury, on 7F2D044. 
+[2026/06/19@12:45:25.606+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to 254a748f-4c10-4ab5-a6c0-ecd768da6843. 
+[2026/06/19@12:55:33.155+0200] P-47796      T-29828 I TSRV    7: (739)   Logout usernum 8, userid khoury, on 7F2D044. 
+[2026/06/19@12:55:33.157+0200] P-37028      T-47392 I TSRV    5: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/19@12:55:33.168+0200] P-17668      T-40164 I TSRV    3: (739)   Logout usernum 4, userid khoury, on 7F2D044. 
+[2026/06/19@12:55:33.178+0200] P-38324      T-46472 I TSRV    1: (739)   Logout usernum 2, userid 254a748f-4c10-4ab5-a6c0-ecd768da6843, on 7F2D044. 
+[2026/06/19@12:55:56.302+0200] P-38324      T-46472 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:43716:AS-ResourceMgr. 
+[2026/06/19@12:55:56.302+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:55:56.302+0200] P-38324      T-46472 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/19@12:55:56.318+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:55:56.322+0200] P-38324      T-46472 I TSRV    1: (739)   Logout usernum 2, userid khoury, on 7F2D044. 
+[2026/06/19@12:55:56.480+0200] P-38324      T-46472 I TSRV    1: (742)   Login usernum 2, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:43716:AS-4. 
+[2026/06/19@12:55:56.480+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:55:56.480+0200] P-38324      T-46472 I TSRV    1: (17961) User 2 set tty to 7F2D044. 
+[2026/06/19@12:55:56.494+0200] P-38324      T-46472 I TSRV    1: (7129)  Usr 2 set name to khoury. 
+[2026/06/19@12:55:56.626+0200] P-17668      T-40164 I TSRV    3: (742)   Login usernum 4, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:43716:AS-7. 
+[2026/06/19@12:55:56.626+0200] P-17668      T-40164 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/19@12:55:56.626+0200] P-17668      T-40164 I TSRV    3: (17961) User 4 set tty to 7F2D044. 
+[2026/06/19@12:55:56.640+0200] P-17668      T-40164 I TSRV    3: (7129)  Usr 4 set name to khoury. 
+[2026/06/19@12:56:00.704+0200] P-37028      T-47392 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASA, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:48004:AS-ResourceMgr. 
+[2026/06/19@12:56:00.704+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:56:00.704+0200] P-37028      T-47392 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/19@12:56:00.722+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:56:00.728+0200] P-37028      T-47392 I TSRV    5: (739)   Logout usernum 6, userid khoury, on 7F2D044. 
+[2026/06/19@12:56:00.861+0200] P-37028      T-47392 I TSRV    5: (742)   Login usernum 6, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:48004:AS-4. 
+[2026/06/19@12:56:00.861+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:56:00.861+0200] P-37028      T-47392 I TSRV    5: (17961) User 6 set tty to 7F2D044. 
+[2026/06/19@12:56:00.875+0200] P-37028      T-47392 I TSRV    5: (7129)  Usr 6 set name to khoury. 
+[2026/06/19@12:56:00.974+0200] P-47796      T-29828 I TSRV    7: (742)   Login usernum 8, userid khoury client type PASN, on 7F2D044 using TCP/IP IPV4 address 172.22.64.1 0:7F2D044:48004:AS-7. 
+[2026/06/19@12:56:00.975+0200] P-47796      T-29828 I TSRV    7: (7129)  Usr 8 set name to khoury. 
+[2026/06/19@12:56:00.975+0200] P-47796      T-29828 I TSRV    7: (17961) User 8 set tty to 7F2D044. 
+[2026/06/19@12:56:00.992+0200] P-47796      T-29828 I TSRV    7: (7129)  Usr 8 set name to khoury. 

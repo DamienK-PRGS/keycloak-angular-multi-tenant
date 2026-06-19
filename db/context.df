@@ -1,0 +1,23 @@
+ADD TABLE "CPObject"
+  AREA "Schema Area"
+  DUMP-NAME "cpobject"
+
+ADD FIELD "SessionID" OF "CPObject" AS character 
+  FORMAT "x(22)"
+  INITIAL ""
+  POSITION 2
+  MAX-WIDTH 44
+  ORDER 10
+
+ADD FIELD "ContextObject" OF "CPObject" AS raw 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 20
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000000324

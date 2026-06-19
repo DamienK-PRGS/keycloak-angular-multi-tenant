@@ -1,0 +1,27 @@
+
+
+====== Start exception logging == "C:\Projets\keycloak-angular-multi-tenant\db\SQLExplorer.exceptions" opened == Fri May 16 10:07:10 CEST 2025 ======
+
+
+**** 1 ****
+
+   Exception at Fri May 16 10:07:10 CEST 2025: java.sql.SQLException
+   Message (throw): ### Connect stack trace. ###
+   Message (excp):  [DataDirect][OpenEdge JDBC Driver]OE Broker fails to find a server available for connecting .
+   Stack Trace:
+java.sql.SQLException: [DataDirect][OpenEdge JDBC Driver]OE Broker fails to find a server available for connecting .
+	at com.ddtek.jdbc.openedgebase.ddb8.a(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.ddb8.b(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.ddb8.a(Unknown Source)
+	at com.ddtek.jdbc.openedge.client.ddd.aw(Unknown Source)
+	at com.ddtek.jdbc.openedge.client.ddd.a(Unknown Source)
+	at com.ddtek.jdbc.openedge.OpenEdgeImplConnection.j(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.BaseConnection.b(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.BaseConnection.k(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.BaseConnection.b(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.BaseConnection.a(Unknown Source)
+	at com.ddtek.jdbc.openedgebase.BaseDriver.connect(Unknown Source)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at com.progress.sql.explorer.SQLConnectServer.call(SQLConnectServer.java:41)
+	at com.progress.common.rmiregistry.TryIt.run(TryIt.java:221)

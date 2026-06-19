@@ -1,0 +1,7 @@
+[2025/04/02@22:21:24.299+0200] P-11860      T-2332  I OEMAGENT3: (452)   Login by SYSTEM on batch. 
+[2025/04/02@22:21:24.300+0200] P-11860      T-2332  I OEMAGENT3: (7129)  Usr 3 set name to DB_Agent. 
+[2025/04/02@22:21:24.311+0200] P-11860      T-2332  I FMAGENT 3: (14262) Successfully connected to AdminServer on port 8855 using TCP/IP IPv4 address 192.168.1.142. 
+[2025/04/02@22:21:24.314+0200] P-11860      T-2332  I FMAGENT 3: (8846)  Registered with Admin Server. 
+[2025/04/02@23:48:08.561+0200] P-11860      T-2332  I FMAGENT 3: (8848)  Connection to Admin Server lost. 
+[2025/04/02@23:48:08.579+0200] P-11860      T-2332  I FMAGENT 3: (14262) Successfully connected to AdminServer on port 8855 using TCP/IP IPv4 address 172.22.64.1. 
+[2025/04/02@23:48:09.036+0200] P-11860      T-2332  I FMAGENT 3: (8846)  Registered with Admin Server. 

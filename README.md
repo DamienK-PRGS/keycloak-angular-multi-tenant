@@ -35,3 +35,12 @@ Client will be available on http://localhost:4200/ just like any other Angular C
 - Fix connection problem after Angular dev server refresh
 - Improve `isLoggedInWithDelay`function (today we wait n milliseconds)
 - Validate / tweak client configuration
+
+
+# Tenants :
+Super tenant : "Super"
+domain access code : "super"
+user : superuser/super
+
+-db C:/Projets/keycloak-angular-multi-tenant/db/KeycloakMT.db -S 20000
+-db C:/Projets/keycloak-angular-multi-tenant/db/context.db -S 20001

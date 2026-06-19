@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false/*,
+  keycloak: {
+    authority: 'http://localhost:8080',
+    redirectUri: 'http://localhost:4200',
+    postLogoutRedirectUri: 'http://localhost:4200/logout',
+    realm: 'loulou',
+    clientId: 'angular-client-loulou',
+  },
+  idleConfig: { idle: 10, timeout: 60, ping: 10 },*/
 };
 
 /*

@@ -1,6 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+
 /dist
 /tmp
 /out-tsc
@@ -9,6 +10,7 @@
 
 # dependencies
 /node_modules
+/pasoe
 
 # profiling files
 chrome-profiler-events*.json
@@ -44,3 +46,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+.builder
+*.r
+*.log
+target
+pasoe/temp
+pasoe/work
+target/

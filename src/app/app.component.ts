@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CustomKeycloakService } from "./services/custom-keycloak.service";
 import { ActionType } from "./pages/home/home.component";
 import { Router } from "@angular/router";
+import { TotoService } from './services/toto.service';  // Importer le service
+import { SecondaryService } from './services/secondary.service';  // Importer le service
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,10 @@ import { Router } from "@angular/router";
 })
 export class AppComponent implements OnInit {
 
-    constructor(private customKeycloakService: CustomKeycloakService, private router: Router) {
+    totoData: any
+
+
+    constructor(private customKeycloakService: CustomKeycloakService, private router: Router,private TotoService: TotoService, private SecondaryService: SecondaryService) {
 
         let action = this.getParameterFromUrl("action")
         let realm = this.getParameterFromUrl("realm")
@@ -35,6 +40,25 @@ export class AppComponent implements OnInit {
                             name: realm,
                             clientId: clientId, displayName: null
                         }
+                        this.TotoService.getTotoData().subscribe(
+                            (data) => {
+                              this.totoData = data;  // Afficher les données récupérées
+                              console.log('Réponse de l\'API', data);
+                            },
+                            (error) => {
+                              console.error('Erreur lors de la récupération des données', error);
+                            }
+                          );
+
+                          this.SecondaryService.getSecondaryData().subscribe(
+                            (data) => {
+                              this.totoData = data;  // Afficher les données récupérées
+                              console.log('Réponse de l\'API SecondaryService', data);
+                            },
+                            (error) => {
+                              console.error('SecondaryService Erreur lors de la récupération des données', error);
+                            }
+                          );
                     })
             }
         }
@@ -42,6 +66,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        
+        
     }
 
     getParameterFromUrl(parameter: string) {

@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomKeycloakService } from './services/custom-keycloak.service';
@@ -9,13 +9,14 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzSpinModule } from "ng-zorro-antd/spin";
 import { CustomComponentsModule } from "./custom-components/custom-components.module";
 import { NzButtonModule } from "ng-zorro-antd/button";
 import { PagesModule } from './pages/pages.module';
 import { NzLayoutModule } from "ng-zorro-antd/layout";
+import { AuthInterceptor } from './auth.interceptor';
 
 registerLocaleData(en);
 
@@ -38,7 +39,9 @@ registerLocaleData(en);
     ],
   providers: [
     CustomKeycloakService,
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    //{ provide: HTTP_INTERCEPTORS, useClass: KeycloakBearerInterceptor, multi: true },
+   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
