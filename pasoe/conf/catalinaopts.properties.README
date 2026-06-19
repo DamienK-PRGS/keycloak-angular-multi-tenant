@@ -1,0 +1,10 @@
+# The catalinaopts.properties file contains name-value Java properites used by
+# the Progress Application Server (PAS) and web applications.
+# Each non blank and non comment line will be defined as a java system property
+# by prepending a '-D' and passed on the command line to the JVM via the
+# CATALINA_OPTS environment variable.
+#
+# Comment lines may be used by placing a pound sign (#) in column zero. Trailing
+# comments are not supported.
+# You may use shell environment variable substitution using the form ${env-var-name} 
+

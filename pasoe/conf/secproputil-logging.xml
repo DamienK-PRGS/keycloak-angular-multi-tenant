@@ -1,0 +1,27 @@
+<!-- 
+PASOE secprop util logging configuration.
+Default is a minimum config with console appender. This file is picked by the secprop util from CATALINA_BASE/conf. 
+If CATALINA_BASE is not set, CATALINA_HOME/conf. 
+-->
+<configuration>
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	<encoder>
+	 <!-- Orginal pattern: <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+		<pattern>%msg%n</pattern>
+	</encoder>
+</appender>
+<!-- Below is to set file appender, can be custommized as needed:
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<fileNamePattern>${catalina.base}/logs/oesecprop.%d{yyyy-MM-dd}.log</fileNamePattern>
+		<maxHistory>7</maxHistory>
+	</rollingPolicy>
+	<encoder>
+		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5marker %logger{36} - %msg%n</pattern>
+	</encoder>
+</appender> -->
+<root level="ERROR">
+	<appender-ref ref="STDOUT" />
+<!--	Add this to use file appender: <appender-ref ref="FILE" /> -->
+</root>
+</configuration>

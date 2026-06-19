@@ -1,0 +1,34 @@
+<included>
+
+  <appender name="SIFT-${CONTEXT_NAME}-OEABL" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator class="com.progress.appserv.services.logging.ContextDiscriminator">
+      <defaultValue>unknown</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${contextName}-OEABL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.oeabl.fileName}</fileNamePattern> 
+          <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+          <pattern>${psc.as.logging.oeabl.pattern}</pattern>
+        </encoder>
+      </appender>
+    </sift>
+  </appender>
+
+  <!-- include the ABL application wide logger configuration for individual OpenEdge & 
+       Spring Security Java packages -->
+  <include optional="false"
+           file="${catalina.base}/ablapps/${CONTEXT_NAME}/conf/logging-ablapp.xml" />
+
+  <!-- The default class/package logging level if a specific class/package is not uncommented and explicitly
+       set using the above definitions.   This can generate HUGE amounts of log file data, but is
+       useful when you don't know where to being looking. -->
+  <root level="${psc.as.logging.oeabl.level:-WARN}">
+    <appender-ref ref="SIFT-${CONTEXT_NAME}-OEABL" /> 
+  </root>
+
+</included>

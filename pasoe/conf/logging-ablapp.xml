@@ -1,0 +1,246 @@
+<included>
+
+<!-- The oeabl web application employs the Java LogBack logging service.  The LogBack
+     service allows you to control the logging based on:
+
+     a) Java pakage name : by package name, inclusive of all classes in all sub-packages
+     b) A single Java class : by fully qualified Java class name
+
+     As seen below, the format for logging service configuration entry
+     <logger name="{package-name|class-path}" level="{level}" />
+
+     The logging levels are specified in upper-case and are, in order of verbosity :
+        ERROR (least information)
+        WARN
+        INFO
+        DEBUG
+        TRACE (most information)
+
+     The logging configuration provided in this file represents a portion of the
+     full LogBack functionality.  Please refer to the LogBack reference documentation 
+     for more advanced configurations not found in this configuration.
+
+     The following sections identify various transports and subsystems involved in 
+     processing a PAS for OE client's request and scheduling its execution in the 
+     multi-session ABL agent process(es). Uncomment the individual packages or classes
+     as needed.
+
+-->
+    
+<!-- APSV adapter -->
+<!--     <logger name="com.progress.appserv.adapters.apsv" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.AskPing" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Broker" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Management" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Properties" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Request" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Timing" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Sessions" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.apsv.Connections" level="INFO"/> -->
+
+    
+<!-- REST adapter -->
+<!--     <logger name="com.progress.appserv.adapters.rest" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Adapter" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Binding" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Context" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Management" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Request" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.rest.Timing" level="INFO"/> -->
+<!--     <logger name="com.progress.caf.cxf.jaxrs.interceptor.CafJAXRSInInterceptor" level="INFO" /> -->
+<!--     <logger name="com.progress.caf.services.http.HttpELResolver" level="INFO" /> -->
+ 
+<!-- SOAP adapter -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPAppObject" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPConstants" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPException" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPMessage" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPParamArray" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPProc" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPRequest" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPResultSet" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPService" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPServlet" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.CamelSOAPUtil" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.ExchangeSOAPProcessor" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.PasSOAPMessageWrapper" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.PasSOAPUtil" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.ProcParam" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.RuntimeStats" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.WsaSOAPException" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.WsaState" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.abl.CamelSOAPAblComponent" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.abl.CamelSOAPAblEndpoint" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.abl.CamelSOAPAblProducer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasArrayMarshaller" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasBigDecimalArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasBigDecimalSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasBooleanArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasBooleanSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasDatasetHandleXmlSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasDateTimeArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasDateTimeSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasDateTimeTZArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasDateTimeTZSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasGCArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasGCSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasHandleArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasHandleSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasIntArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasIntSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasLongArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasLongSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasMemptrArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasMemptrSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasRawArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasRawSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasResultSetHolderSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasResultSetSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasSerializerRegistry" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasSimpleDateFormat" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasStringArraySerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasStringSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasWsaNilSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.PasXmlPassthroughSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.serializer.ResultSetSerializer" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.util.PasSchemaParser" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.adapters.camel.soap.util.PasWSDLUtil" level="INFO"/> -->
+    
+<!-- WEB adapter -->
+<!--    <logger name="com.progress.appserv.adapters.web.Broker" level="INFO"/> -->
+<!--    <logger name="com.progress.appserv.adapters.web.Management" level="INFO"/> -->
+<!--    <logger name="com.progress.appserv.adapters.web.Properties" level="INFO"/> -->
+<!--    <logger name="com.progress.appserv.adapters.web.Request" level="INFO"/> -->
+<!--    <logger name="com.progress.appserv.adapters.web.Timing" level="INFO"/> -->
+<!--    <logger name="com.progress.appserv.adapters.web.WebOutputStreamer" level="INFO"/> -->
+
+<!-- General AppServer names -->
+<!--     <logger name="com.progress.O4gl" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Agent" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.AskPing" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Basic" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Broker" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Debug" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Mgmt" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Prop" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Rqst" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Session" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.UBNET" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.Timing" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.IdleResourceWatchdog" level="WARN"/> -->
+<!--     <logger name="com.progress.appserv.PoolMgt.Agent" level="WARN"/> -->
+<!--     <logger name="com.progress.appserv.PoolMgt.AgentWatchdog" level="WARN"/> -->
+<!--     <logger name="com.progress.appserv.PoolMgt.Connection" level="WARN"/> -->
+
+<!-- Property Reader -->
+<!--     <logger name="com.progress.appserv.services.Properties" level="INFO"/> -->
+    
+<!-- OpenEdge endpoint -->
+<!--     <logger name="com.progress.appserv.endpoints.oe.Endpoint" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.endpoints.oe.Request" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.endpoints.oe.TypeConversion" level="INFO"/> -->
+
+<!-- OpenEdge metrics collection and management -->
+<!--     <logger name="com.progress.appserv.services.metrics.OEMetricsBean" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.services.metrics.OEMetricsManager" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.services.metrics.PASOEMetrics" level="INFO"/> -->
+<!--     <logger name="com.progress.appserv.services.metrics.OEMetricsUtil" level="INFO"/> -->
+
+<!-- oemanager -->
+<!--      <logger name="com.progress.appserv.manager.services.RESTDeployerService" level="INFO"/> -->
+<!--      <logger name="com.progress.appserv.manager.util.ZipUtil" level="INFO"/> -->
+<!--      <logger name="com.progress.appserv.manager.services.SOAPDeployerService" level="INFO"/> -->
+
+
+<!--  OEABL Security User Login/Logout event logging -->
+<!-- <logger name="com.progress.appserv.services.security.OEAuthenticationLogger" level="INFO"/> -->
+<!-- <logger name="com.progress.appserv.services.security.OEAuthorizationLogger" level="INFO"/> -->
+
+
+<!-- OpenEdge: Spring to OpenEdge ClientPrincipal token management -->
+<!-- Comment or uncomment as a block of class loggers
+        <logger name="com.progress.appserv.services.security.OEClientPrincipalFilter" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OEAuthenticationTokenConverter" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OECPSSOTokenManager" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OECPSSOToken" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OECPRefreshFilter" level="INFO"/> 
+        <logger name="com.progress.auth" level="INFO"/> 
+-->
+
+<!-- OpenEdge: HTTP Form login/logout process process handlers -->
+<!-- Comment or uncomment as a block of class loggers
+        <logger name="com.progress.appserv.services.security.OEFormAuthnEntryPointHandler" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OELogoutSuccessHandler" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OEAuthnSuccessHandler" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OEAuthnFailHandler" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OEAccessDeniedHandler" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OECPSSOAuthFilter" level="INFO"/> 
+        <logger name="com.progress.appserv.services.security.OEAbstractAuthorizationFilter" level="INFO" />
+-->
+
+<!-- OpenEdge: HTTP Session start/stop event handler -->
+<!--    <logger name="com.progress.appserv.clientrt.broker.SessionLifeCycleListener" level="INFO"/> -->
+
+<!-- OpenEdge: CORS logger -->
+<!--    <logger name="com.progress.appserv.services.security.OECORSFilter" level="INFO"/> -->
+
+<!-- OpenEdge: OEABL subsystem logging (inclusive of all individual services listed above) -->
+<!--    
+<logger name="com.progress.appserv.services.security" level="DEBUG"/>  
+-->
+
+<!-- OpenEdge: oeabl web application's oeablSecurity.properties loader-->
+<!-- Uncomment to debug loading of the Spring Security properties from oeablSecurity.properties files
+        <logger name="com.progress.appserv.services.security.OESpringPropertySource" level="INFO"/> 
+-->
+
+<!-- Spring: all logging (inclusive of all core & security classes); generates HUGE log files -->
+<!--    <logger name="org.springframework" level="INFO"/> -->
+
+<!--  Spring: Track loading of Spring XML configuration files -->
+<!-- Uncomment for debugging the loading, creation, and initization of Spring Security Java beans
+        <logger name="org.springframework.beans.factory.xml.XmlBeanDefinitionReader" level="INFO"/> 
+-->
+
+<!--  Spring: HTTP login/logout session control process -->
+<!--  Comment or uncomment as a block of class loggers
+        <logger name="org.springframework.security.core.session" level="INFO"/>
+        <logger name="org.springframework.security.web.session" level="INFO"/>
+-->
+
+<!--  Spring: HTTP user login/logout authentication process -->
+<!--  Comment or uncomment as a block of class loggers 
+        <logger name="org.springframework.security.authentication" level="INFO"/>
+        <logger name="org.springframework.security.web.authentication" level="INFO"/>
+        <logger name="org.springframework.security.web.access" level="INFO"/>
+        <logger name="org.springframework.security.web.context" level="INFO"/>
+-->
+
+<!--  Spring: HTTP user URL authorization (<intercept-url>) processing -->
+<!--    <logger name="org.springframework.security.access" level="INFO"/> -->
+
+<!--  Spring: LDAP & AD user login authentication provider access to the Directory Service -->
+<!--  Comment or uncomment as a block of class loggers 
+        <logger name="org.springframework.security.ldap" level="INFO"/>
+        <logger name="org.springframework.ldap" level="INFO"/>
+        <logger name="com.progress.appserv.services.security.OEADProvider" level="INFO"/> 
+-->
+
+<!--  Spring Security OAuth2 -->
+<!--
+        <logger name="org.springframework.security.oauth2" level="INFO" />
+        <logger name="org.springframework.security.jwt" level="INFO" />
+-->
+
+<!--  Spring Security SAML -->
+<!--  Comment or uncomment as a block of class loggers 
+          <logger name="org.springframework.security.saml2" level="INFO"/>
+          <logger name="org.opensaml" level="INFO"/>
+          <logger name=" PROTOCOL_MESSAGE " level="INFO"/>
+-->
+
+
+</included>
+

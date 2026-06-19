@@ -1,0 +1,34 @@
+<included>
+
+  <appender name="SIFT-${CONTEXT_NAME}-PROXY" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator class="com.progress.appserv.services.logging.ContextDiscriminator">
+      <defaultValue>unknown</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${contextName}-PROXY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.oeproxy.fileName}</fileNamePattern> 
+          <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+          <pattern>${psc.as.logging.oeproxy.pattern}</pattern>
+        </encoder>
+      </appender>
+    </sift>
+  </appender>
+
+  <!--Turn On OEProxy Loggers here.-->
+  <!-- <logger name="org.apache.http.impl.client" level="DEBUG" /> -->
+  <!-- <logger name="org.apache.http.headers" level="DEBUG" /> -->
+  <!-- <logger name="org.apache.http.wire" level="DEBUG" /> -->
+  <!-- <logger name="com.progress.appserv.httpproxy.General" level="DEBUG" /> -->
+  <!-- <logger name="com.progress.appserv.httpproxy.Properties" level="DEBUG" /> -->
+
+  <root level="${psc.as.logging.oeproxy.level}">
+    <appender-ref ref="SIFT-${CONTEXT_NAME}-PROXY" /> 
+  </root>
+
+<included>
+

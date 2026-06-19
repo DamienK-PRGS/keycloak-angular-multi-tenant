@@ -1,0 +1,25 @@
+<configuration>
+     
+      <!-- Add the statusListener to suppress Logback's internal status messages -->
+      <statusListener class="ch.qos.logback.core.status.NopStatusListener" /> 
+      
+      <appender name="RESTDEPLOY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${CATALINA_BASE}/logs/restdeploy.%d{yyyy-MM-dd}.log</fileNamePattern> 
+        </rollingPolicy>
+        <encoder>
+          <!-- add the timestamp as milliseconds to facilitate logfile post processing     -->
+          <!--                                                                             -->
+          <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+          <pattern>%d{HH:mm:ss.SSS}/%r [%thread] %-5level %logger{36} - %msg%n</pattern>
+          <!--                                                                             -->
+        </encoder>
+      </appender>
+
+  <root level="TRACE">
+    <appender-ref ref="RESTDEPLOY" />
+  </root>
+
+</configuration>

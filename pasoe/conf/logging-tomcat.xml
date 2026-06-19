@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Logging configuration for classes used at the Tomcat classloader level.
+This is a logback replacement for the standard Tomcat juli logging.
+-->
+<configuration debug="false">
+
+  <property file="${CATALINA_BASE}/conf/logging-tomcat.properties" />
+  <property name="COMMON-PATTERN" 
+            value="%d{dd-MMM-yyyy HH:mm:ss.SSS} %-5level [%thread] %C{36}.%M - %msg%n" />  
+
+  <property name="appender" value="${catalina.logging.destination}" />
+  
+  <appender name="CONSOLE" class="org.apache.juli.logging.ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${psc.as.logging.console.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE-CATALINA" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.catalina.fileName}</fileNamePattern> 
+    </rollingPolicy>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>${psc.as.logging.tomcat.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE-LOCALHOST" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.localhost.fileName}</fileNamePattern> 
+    </rollingPolicy>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>${psc.as.logging.tomcat.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE-MANAGER" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.manager.fileName}</fileNamePattern> 
+    </rollingPolicy>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>${psc.as.logging.tomcat.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE-HOST-MANAGER" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.hostmanager.fileName}</fileNamePattern> 
+    </rollingPolicy>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>${psc.as.logging.tomcat.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE-HEALTH-COLLECTOR" class="org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <rollingPolicy class="org.apache.juli.logging.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.oehealth.fileName}</fileNamePattern> 
+    </rollingPolicy>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>${psc.as.logging.oehealth.pattern}</pattern>
+      
+    </encoder>
+  </appender>
+
+  <logger name="org.apache.catalina" level="${psc.as.logging.catalina.level:-INFO}" additivity="true">
+    <appender-ref ref="${appender}-CATALINA" />
+  </logger>
+
+  <logger name="org.apache.tomcat" level="${psc.as.logging.catalina.level:-INFO}" additivity="true">
+    <appender-ref ref="${appender}-CATALINA" />
+  </logger>
+  
+  <logger name="org.apache.coyote" level="${psc.as.logging.catalina.level:-INFO}" additivity="true">
+    <appender-ref ref="${appender}-CATALINA" />
+  </logger>
+  
+  <logger name="org.apache.catalina.core.ContainerBase.[Catalina]" level="${psc.as.logging.localhost.level:-INFO}" additivity="false">
+    <appender-ref ref="${appender}-LOCALHOST" />
+  </logger>
+
+  <logger name="org.apache.catalina.core.ContainerBase.[Catalina].[/manager]" level="${psc.as.logging.manager.level:-INFO}"
+          additivity="false">
+    <appender-ref ref="${appender}-MANAGER" />
+  </logger>
+
+  <logger name="org.apache.catalina.core.ContainerBase.[Catalina].[/host-manager]" level="${psc.as.logging.hostmanager.level:-INFO}"
+          additivity="false">
+    <appender-ref ref="${appender}-HOST-MANAGER" />
+  </logger>
+  
+  <logger name="com.progress.appserv.services.health" level="${psc.as.logging.oehealth.level:-INFO}" additivity="false">
+    <appender-ref ref="${appender}-HEALTH-COLLECTOR" />
+  </logger>
+  
+  <logger name="com.progress.appserv.services.lifecycle" level="${psc.as.logging.catalina.level:-INFO}" additivity="true">
+    <appender-ref ref="${appender}-CATALINA" />
+  </logger>
+
+  <!-- Use this to debug "At least one JAR was scanned for TLDs yet contained no TLDs." messages -->
+  <!-- <logger name="org.apache.jasper.servlet.TldScanner" level="DEBUG" /> -->
+  
+  <root level="${psc.as.logging.tomcat.level:-INFO}">
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+</configuration>

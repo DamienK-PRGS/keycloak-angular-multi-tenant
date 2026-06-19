@@ -1,0 +1,58 @@
+<configuration>
+  <!-- appender name="OEWATCHER" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    </encoder>
+  </appender -->
+      <appender name="OEWATCHER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${CATALINA_BASE}/logs/oewatcher-app.%d{yyyy-MM-dd}.log</fileNamePattern> 
+        </rollingPolicy>
+        <encoder>
+          <!-- add the timestamp as milliseconds to facilitate logfile post processing     -->
+          <!--                                                                             -->
+          <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+          <pattern>%d{HH:mm:ss.SSS}/%r [%thread] %-5level %logger{36} - %msg%n</pattern>
+          <!--                                                                             -->
+        </encoder>
+      </appender>
+
+  <!-- appender name="LOGACTION" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern> %-5level :: %msg %n</pattern>
+    </encoder>
+  </appender -->
+
+    <appender name="LOGACTION"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${CATALINA_BASE}/logs/oewatcher-action.%d{yyyy-MM-dd}.log</fileNamePattern> 
+        </rollingPolicy>
+        <encoder>
+          <!-- add the timestamp as milliseconds to facilitate logfile post processing     -->
+          <!--                                                                             -->
+          <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+          <pattern>%d{HH:mm:ss.SSS}/%r [%thread] %-5level %logger{36} - %msg%n</pattern>
+          <!--                                                                             -->
+        </encoder>
+    </appender>
+    <!-- similar appenders for all others-->
+    <logger name="com.progress.appserv.util.oewatcher.JsLogAction.Action" additivity="false" level="TRACE">
+        <appender-ref ref="LOGACTION" />
+    </logger>
+
+    <logger name="com.progress.appserv.util.oewatcher" additivity="false" level="INFO">
+         <appender-ref ref="OEWATCHER" />
+    </logger>
+
+  <root level="TRACE">
+    <appender-ref ref="OEWATCHER" />
+  </root>
+  <root level="TRACE">
+    <appender-ref ref="LOGACTION" />
+  </root>
+
+</configuration>

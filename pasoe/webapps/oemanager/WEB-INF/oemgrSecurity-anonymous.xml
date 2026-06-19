@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context containing authentication, channel
+  - security and web URI beans.
+  -
+  - Only used by "filter" artifact.
+  -
+  -->
+
+<b:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <b:bean
+        class="org.springframework.web.servlet.handler.HandlerMappingIntrospector"
+        name="mvcHandlerMappingIntrospector"/>
+
+    <!-- restricted access URIs -->
+     <http auto-config="false" 
+        use-expressions="true" 
+        create-session="ifRequired" 
+        disable-url-rewriting="true" 
+        authentication-manager-ref="oemgrApplicationAuth" 
+        entry-point-ref="http403ForbiddenEntryPoint" >
+
+        <!-- OpenEdge CORS Filter -->
+        <custom-filter before="SECURITY_CONTEXT_FILTER" 
+                       ref="OECORSFilter" />
+
+         <!-- public access URIs -->
+        <intercept-url pattern="/*" method="GET" access="permitAll()"/>
+        
+        <!-- URL access controls -->
+        <!-- allow anonymous for just those things they need -->
+        <intercept-url pattern="/applications/**" method="GET" 
+                    access="isAnonymous()"/>
+        <intercept-url pattern="/applications/**" method="PUT" 
+                    access="isAnonymous()"/>
+        <intercept-url pattern="/applications/**" method="POST" 
+                    access="isAnonymous()"/>
+        <intercept-url pattern="/applications/**" method="DELETE" 
+                    access="isAnonymous()"/>
+
+
+        <!-- best practice: deny anything no explicitly granted -->
+        <intercept-url pattern="/**" access="denyAll()"/>
+
+        <!-- authentication model -->
+        <anonymous />
+
+        <!-- login session controls -->
+        <session-management session-fixation-protection="newSession" />
+
+	<!-- Disable org.springframework.security.web.csrf.CsrfFilter -->
+	<csrf disabled="true"/>
+
+
+    </http>
+
+    <b:bean id="http403ForbiddenEntryPoint"   
+          class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+
+    <!-- The security filter that implements the CORS standard for controlling
+         cross site resource access by http clients. -->
+    <b:bean id="OECORSFilter"
+            class="com.progress.appserv.services.security.OECORSFilter" >
+      <b:constructor-arg ref="corsSource"/>
+      <b:property name="allowAll" value="true" />
+    </b:bean>                
+    
+    <b:bean id="corsSource" class="org.springframework.web.cors.UrlBasedCorsConfigurationSource">
+      <b:property name="corsConfigurations">
+        <b:map>
+          <b:entry key="/**">
+            <b:bean class="com.progress.appserv.services.security.OECorsConfiguration">
+              <b:property name="allowMethods" value="GET,POST,PUT,DELETE" />
+              <b:property name="allowDomains" value="" />
+              <b:property name="allowSubdomains" value="false" />
+              <b:property name="messageHeaders" value="Accept,Accept-Language,Content-Language,Content-Type,X-CLIENT-CONTEXT-ID,Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Pragma,Cache-control,Authorization" />
+              <b:property name="responseHeaders" value="Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,X-CLIENT-CONTEXT-ID" />
+              <b:property name="supportCredentials" value="true" />
+              <b:property name="maxAge" value="-1" />
+            </b:bean>
+          </b:entry>
+        </b:map>
+      </b:property>
+    </b:bean>
+ 
+    <authentication-manager id="oemgrApplicationAuth" >
+    </authentication-manager>
+
+</b:beans>

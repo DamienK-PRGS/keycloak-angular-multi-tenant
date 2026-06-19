@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Logging configuration for the Tomcat access log.
+This is a logback replacement for the standard Tomcat access logging.
+-->
+<configuration debug="false" >
+
+   <property file="${CATALINA_BASE}/conf/logging-tomcat.properties" />
+
+   <!-- <property name="max.retention.days" value="60" /> -->
+
+   <property name="appender" value="${catalina.logging.destination}" />
+
+   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+       <encoder class="ch.qos.logback.access.common.PatternLayoutEncoder">
+           <pattern>common</pattern>
+       </encoder>
+   </appender>
+
+   <appender name="FILE-ACCESS-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       
+	   <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+		  <evaluator>
+			<expression>event.getRequest().getContextPath().equals("/${psc.as.accesslog.attribute}")</expression>
+		  </evaluator>
+		  <onMatch>DENY</onMatch>
+       </filter>
+	   
+       <append>true</append>
+       <encoder class="ch.qos.logback.access.common.PatternLayoutEncoder">
+           <charset>utf-8</charset>
+           <pattern>${psc.as.logging.access.pattern}</pattern>
+       </encoder>
+       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+           <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.access.fileName}</fileNamePattern>
+           <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+       </rollingPolicy>
+    </appender>
+
+    <appender-ref ref="${appender}-ACCESS-LOG"/>
+
+
+</configuration>
+

@@ -1,0 +1,28 @@
+# This properties file contains the list of Windows process environment
+# variables to include into the PAS Windows service created using
+# 'tcman.bat service <alias-name> register' command.
+#
+# Each line in this file contains exactly 1 environment valiable name
+# to load.  The case is 'insensitive'.
+#
+# Blank and comment lines are ignored.
+#
+# White-space COUNTS!!!
+#
+COMPUTERNAME
+ComSpec
+HOME
+HOMEDRIVE
+HOMEPATH
+NUMBERER_OF_PROCESSORS
+OS
+PROCESSOR_ARCHITECTURE
+PROCESSOR_IDENTIFIER
+PROCESSOR_LEVEL
+PROCESSOR_REVISION
+PSModulePath
+SystemRoot
+ProgramFiles
+ProgramFiles(x86)
+DLC
+WRKDIR

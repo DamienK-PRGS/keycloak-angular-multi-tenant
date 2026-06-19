@@ -1,0 +1,2 @@
+VAR INT i = 0.
+MESSAGE i.

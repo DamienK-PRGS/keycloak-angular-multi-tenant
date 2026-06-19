@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context containing HTTP authentication control
+  -->
+
+<b:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <b:bean
+        class="org.springframework.web.servlet.handler.HandlerMappingIntrospector"
+        name="mvcHandlerMappingIntrospector"/>
+    
+    <!-- intercept-url hints
+         role names in the access attribute must have "ROLE_" prefixes. What occurs 
+         the underscore is up to you.
+     -->
+
+    <!-- public access URIs -->
+    <http pattern="/index.html" security="none" />
+  
+    <!-- restricted access URIs -->  
+    <http auto-config="false" 
+        use-expressions="true" 
+        create-session="never" 
+        disable-url-rewriting="true" 
+        authentication-manager-ref="OEManagerLdapAuth" 
+        realm="PAS OEManager" >
+
+        <!-- public access URIs -->
+        <!-- OpenEdge CORS Filter -->
+        <custom-filter before="SECURITY_CONTEXT_FILTER" 
+                       ref="OECORSFilter" />
+
+         <intercept-url pattern="/*" method="GET" access="hasAnyRole('ROLE_PSCAdmin','ROLE_PSCOper','ROLE_PSCUser')"/>
+        
+        <!-- URL access controls -->
+        <intercept-url pattern="/applications/**" method="GET" 
+                    access="hasAnyRole('ROLE_PSCAdmin','ROLE_PSCOper')"/>
+        <intercept-url pattern="/applications/**" method="PUT" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+        <intercept-url pattern="/applications/**" method="POST" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+        <intercept-url pattern="/applications/**" method="DELETE" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+
+        <!-- Best practice - deny anything not explicitly granted. -->
+        <intercept-url pattern="/**" access="denyAll()"/>
+
+        <!-- authentication models -->
+        <http-basic />
+
+        <!-- login session controls 
+             note: comment out if session-creation is stateless -->
+        <session-management session-fixation-protection="newSession" />
+
+	<!-- Disable org.springframework.security.web.csrf.CsrfFilter -->
+	<csrf disabled="true"/>
+        <access-denied-handler error-page="/accessdenied.html" />
+    </http>
+
+    <!-- The security filter that implements the CORS standard for controlling
+         cross site resource access by http clients. -->
+    <b:bean id="OECORSFilter"
+            class="com.progress.appserv.services.security.OECORSFilter" >
+      <b:constructor-arg ref="corsSource"/>
+      <b:property name="allowAll" value="true" />
+    </b:bean>                
+    
+    <b:bean id="corsSource" class="org.springframework.web.cors.UrlBasedCorsConfigurationSource">
+      <b:property name="corsConfigurations">
+        <b:map>
+          <b:entry key="/**">
+            <b:bean class="com.progress.appserv.services.security.OECorsConfiguration">
+              <b:property name="allowMethods" value="GET,POST,PUT,DELETE" />
+              <b:property name="allowDomains" value="" />
+              <b:property name="allowSubdomains" value="false" />
+              <b:property name="messageHeaders" value="Accept,Accept-Language,Content-Language,Content-Type,X-CLIENT-CONTEXT-ID,Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Pragma,Cache-control,Authorization" />
+              <b:property name="responseHeaders" value="Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,X-CLIENT-CONTEXT-ID" />
+              <b:property name="supportCredentials" value="true" />
+              <b:property name="maxAge" value="-1" />
+            </b:bean>
+          </b:entry>
+        </b:map>
+      </b:property>
+    </b:bean>
+ 
+     <!-- Define the LDAP server you will use for account authentication.
+         Refer to standard LDAP URL specification schemes for details.
+         You may, or may not, require a 'manager' fully qualified DN of
+         a user account that has 'search' permission in the directory tree.
+         Consult your Directory Service admin for more information.
+    -->
+    <ldap-server id="PrimayLDAP"
+                 url="ldap://enter_hostname:389/root_dn_here"
+                 manager-dn="uid=admin,ou=system"
+                 manager-password="admin" />
+
+    <!-- Authentication manager reserved for PUBLIC anonymous authentication 
+         to the static and dynamic application content.
+         The parameters for the <ldap-authentication-provider> element
+         is dependent on the design and implementation of the
+         Directory Service.  Consult with the administrator for help
+         with defining the correct search filters and object attributes
+         to use.
+         WARNING: The LDAP authentication provider upper cases all role
+         names found for the authenticated user in the directory service.
+         This affects setting the role names in the above <intercept-url>
+         elements.  Example: ldap name "OEUsers"  Spring role name "ROLE_OEUSERS"
+     -->
+    <authentication-manager id="OEManagerLdapAuth" >
+        <ldap-authentication-provider
+            server-ref="PrimayLDAP"
+            group-role-attribute="cn"
+            role-prefix="ROLE_"
+            group-search-filter="(member={0})"
+            group-search-base=""
+            user-search-base=""
+            user-search-filter="(uid={0})" />
+    </authentication-manager>
+
+</b:beans>

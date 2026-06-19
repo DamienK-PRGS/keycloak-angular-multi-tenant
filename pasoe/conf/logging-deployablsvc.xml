@@ -1,0 +1,21 @@
+<configuration>
+      <appender name="DEPLOYABLSVC" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${CATALINA_BASE}/logs/deployablsvc.%d{yyyy-MM-dd}.log</fileNamePattern> 
+        </rollingPolicy>
+        <encoder>
+          <!-- add the timestamp as milliseconds to facilitate logfile post processing     -->
+          <!--                                                                             -->
+          <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+          <pattern>%d{HH:mm:ss.SSS}/%r [%thread] %-5level %logger{36} - %msg%n</pattern>
+          <!--                                                                             -->
+        </encoder>
+      </appender>
+
+  <root level="INFO">
+    <appender-ref ref="DEPLOYABLSVC" />
+  </root>
+
+</configuration>

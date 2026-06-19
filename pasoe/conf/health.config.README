@@ -1,0 +1,152 @@
+# Copyright © 1998-2019 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+# -------------------- health.config.README ------------------------------
+#
+# README for the configuration file for the PASOE HealthScanner
+#
+##########################################################################
+##
+---------------------------------------------------------------------------
+The health.config file is JSON and as such, must be valid JSON. Please 
+verify all changes with a JSON validator.
+---------------------------------------------------------------------------
+There are other values in the appserver.properties file that are documented
+there. These work with the values in this file. These are the comments, see
+the appserver.properties file for the parameters and values.
+
+# PAS health collector enable
+# PAS health collector configuration file
+# PAS health collector delay before starting polling
+# PAS health collector wait on shutdown for polls to complete
+# PAS health collector polling interval
+
+# The timeout for polling each individual probe in milliseconds.
+# A value of -1 sets the timeout as # Probes/ Interval
+# A value of zero means no timeout.
+
+Please use "tcman config" to change these values.
+---------------------------------------------------------------------------
+NOTES:
+1) The health of a probe is _NOT_ its calculated value
+	Health is calculated using your fullHealth and extremalHealth settings
+	Example: The memory may be 85% but the Memory Health Score will be 50% when
+		fullHealth=0.8
+		extremalHealth=0.9
+2) If you want the HealthScanner to be critical when a specific probe or
+	probe collection becomes critical set failonCritical="true". This will 
+	cause the whole HealthScanner score to be failed. 
+3) Some probes are considered "experimental" and are not enabled by default
+	GCUsedMemoryTrend Health
+	OOM Killer Health
+---------------------------------------------------------------------------
+
+name	
+		The name of the proble or probe collection
+		
+		Character field - must have double-quotes around the name
+		
+probeID	
+		A unique integer value for each probe, including composites
+		
+		Numeric value - Values from 1 to 1000 are reserved for use by Progress
+						For custom probes, specify a unique value > 1000.
+		
+description	
+
+		The description of the probe or probe collection
+		
+		Character field - must have double-quotes around the name
+
+comments
+		Additional comments for the probe or probe collection
+		
+		Character field - must have double-quotes around the name
+		
+calculation
+		The description of the calculation of the metric
+		
+		Character field - must have double-quotes around the name
+		
+className
+		The class name of the probe or probe collection
+		
+		*** DO NOT CHANGE ***
+		
+weight
+		The relative importance 
+			- if a probe, relative to other probes in the probe collection
+			- if a probe collection, relative to other collections
+		
+		Numeric Value - from 0.0 to 1.0 (no quotes)
+		
+fullHealth
+		Threshold where the calculated value always shows a Health value of 1.0
+		
+		Numeric Value - from 0.0 to 1.0 (no quotes)
+		
+		Example: If memory probe fullHealth=0.8 then the probe health will show
+		100% (1.0) until memory usage hits 80%. Then the probe health will
+		decline proportionally until it gets to 0% at the extremalHealth 
+		setting.
+		
+extremalHealth
+		Threshold where the calculated value always shows a Health value of 0.0 
+		
+		Numeric Value - from 0.0 to 1.0 (no quotes)
+		
+marginal
+		Threshold where a probe or probe collection's health is considered 
+		marginal
+			Sets YELLOW color to heatmap
+		
+		Numeric Value - from 0.0 to 1.0 (no quotes)
+		
+critical
+		A threshold where a probe or probe collection's healthis considered 
+		critical
+			Sets RED color to heatmap
+		
+		Numeric Value - from 0.0 to 1.0 (no quotes)
+		
+failOnCritical
+		"true" - when probe or probe collection is critical the whole health 
+			check metric is also set to critical
+		"false" - when probe or probe collection is critical it does not set
+			the whole health check metric to critical
+			
+		Logical Value - either "false" or "true" requires double-quotes
+
+enabled
+		"true" - enables the probe or probe collection to be calculated
+			and contribute to the whole health calculation
+		"false" - disables the probe or probe collection and no calculation
+			will be done and it will not affect the whole health calculation
+			
+		Logical Value - either "false" or "true" requires double-quotes
+		
+---------------------------------------------------------------------------	
+This section for "GCUsedMemoryTrend Health" probe only
+
+This probe has a sliding time scale to evaluate Garbage collection over the
+last number of polling intervals
+---------------------------------------------------------------------------
+
+safeFuture
+		Safe number of Future objects in memory
+		
+		Integer value - (no quotes)
+
+timeToStart
+		Number of polling intervals before starting to evaluate probe
+		
+		Integer value - (no quotes)
+		
+numberOfIntervals
+		Number of polling intervals to use to evaluate probe
+		
+		Integer value - (no quotes)
+		
+minNumberOfIntervals
+		Minimum number of polling intervals to evaluate probe
+		
+		Integer value - (no quotes)
+					

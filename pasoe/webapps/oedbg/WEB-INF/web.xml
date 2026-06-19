@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+  version="6.0"
+  id="WebApp_ID" 
+  metadata-complete="true">
+
+  <display-name>Progress Application Server Debugger for OpenEdge</display-name>
+
+  <!-- suppress this for oedbg as this will prevent tomcat from
+       dynamically locating the oedbg websocket endpoint classes
+       n.b. remove this comment once the deployment is working properly
+
+  <absolute-ordering />
+
+   -->
+
+  <env-entry>
+    <env-entry-name>logback/configuration-resource</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>../logging.xml</env-entry-value>
+  </env-entry>
+
+  <!-- This listener needs to be first for logging of the web application
+       startup operations. -->
+  <listener>
+    <listener-class>ch.qos.logback.classic.selector.servlet.ContextDetachingSCL</listener-class>
+  </listener>
+
+    <!-- remove context listener as this is not needed any longer
+         n.b. remove this comment once the deployment is working properly
+          
+      - Loads the debugger application's context at startup.
+    <listener>
+      <listener-class>com.progress.appserv.adapters.oedbg.OEDbgServletContextListener</listener-class>
+    </listener>
+
+    -->
+
+    <!-- Filter class uses for the web application's file logger -->
+    <filter>
+      <filter-name>LoggerContextFilter</filter-name>
+      <filter-class>com.progress.appserv.services.logging.LoggerContextFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+      <filter-name>LoggerContextFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
+

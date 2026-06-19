@@ -1,0 +1,36 @@
+<included>
+
+  <appender name="SIFT-${CONTEXT_NAME}-OEDBG" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator class="com.progress.appserv.services.logging.ContextDiscriminator">
+      <defaultValue>unknown</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${contextName}-OEDBG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.oedbg.fileName}</fileNamePattern> 
+          <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+          <pattern>${psc.as.logging.oedbg.pattern}</pattern>
+        </encoder>
+      </appender>
+    </sift>
+  </appender>
+
+  <!--Turn On OEDBG Loggers here.-->
+
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Broker" level="INFO"/> -->
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Management" level="INFO"/> -->
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Properties" level="INFO"/> -->
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Sessions" level="INFO"/> -->
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Request" level="INFO"/>  -->
+  <!-- <logger name="com.progress.appserv.adapters.oedbg.Timing" level="INFO"/>  -->
+
+  <root level="${psc.as.logging.oedbg.level}">
+    <appender-ref ref="SIFT-${CONTEXT_NAME}-OEDBG" /> 
+  </root>
+
+</included>
+

@@ -1,0 +1,123 @@
+<included>
+    <!--
+    This logging configuration fragment contains the definition of where, and 
+    how, logging data is recorded for Spring Security authentication and
+    authorization events.  It then defines <logger></logger> settings that control 
+    which authentication and/or authorization events will be logged.
+
+    The logging configuration fragment is loaded by the oeabl web application's
+    logging configuration file (WEB-INF/logging.xml), which establishes the
+    context by which separation of logging Spring Security events between ABL 
+    applications can occur.
+
+    This specific configuration fragment establishes a file system file as the
+    destination for all Spring Security authentication and authorization event
+    log data. The file is automatically rolled to a new file at midnight.  
+
+    In the definition of logging file is the pattern of fields that will be
+    written to the log file.
+
+    The authentication and authorization events will be sent to different
+    ABL application logging destinations.  The event logging fields and the
+    data is quite different and is necessary to enable customization of one 
+    or both destination's data formats.
+   -->
+
+      <!-- OpenEdge HTTP request MDC fields                           -->
+      <!--   %X{OEReq.serverName}                                     -->
+      <!--   %X{OEReq.URI}                                            -->
+      <!--   %X{OEReq.protocol}                                       -->
+      <!--   %X{OEReq.method}                                         -->
+      <!--   %X{OEReq.requestId}                                      -->
+      <!--   %X{OEReq.sessionId}                                      -->
+      <!--   %X{OEReq.webapp}                                         -->
+      <!--   %X{OEReq.transport}                                      -->
+      <!--   %X{OEReq.remoteHost}                                     -->
+      <!--   %X{OEReq.remoteAddr}                                     -->
+      <!--   %X{OEReqHead.xxxxxx}                                     -->
+      <!--                                                            -->
+      <!-- Generic custom header access via MDC fields                -->
+      <!--   %X{OEReqHead.Xxxx} where Xxxxx is the custom header name -->
+      <!--                                                            -->
+      <!-- User login MDC fields                                      -->
+      <!--   %X{OESec.eventType}                                      -->
+      <!--   %X{OESec.eventStatus}                                    -->
+      <!--   %X{OESec.loginPrincipal}                                 -->
+      <!--   %X{OESec.failReason}                                     -->
+      <!--   %X{OESec.failDetails}                                    -->
+      <!--   %X{OESec.userRoles}                                      -->
+      <!--                                                            -->
+      <!-- User URL authorization MDC fields                          -->
+      <!--   %X{OESec.authzUserId}                                    -->
+      <!--   %X{OESec.failObj}                                        -->
+      <!--   %X{OESec.failAttrs}                                      -->
+      <!--   %X{OESec.failReason}                                     -->
+      <!--                                                            -->
+      <!--  Define the ABL application's User Login & URL access control event 
+            logging.  Levels:
+                "OFF"    Do not log events
+                "ERROR"  Log only failure events
+                "INFO"   Log both failure & success events
+      -->
+
+  <!-- Define logging output destination(s) for Spring audit event audit trails -->
+  <appender name="SIFT-${CONTEXT_NAME}-AUTHN" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator class="com.progress.appserv.services.logging.ContextDiscriminator">
+      <defaultValue>unknown</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${contextName}-AUTHN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.authn.fileName}</fileNamePattern> 
+          <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+          <pattern>${psc.as.logging.authn.pattern}</pattern>
+        </encoder>
+      </appender>
+    </sift>
+  </appender>
+
+  <!--
+    Define the destination and format of Spring Security authentication process
+    events.
+   -->
+
+  <appender name="SIFT-${CONTEXT_NAME}-AUTHZ" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator class="com.progress.appserv.services.logging.ContextDiscriminator">
+      <defaultValue>unknown</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${contextName}-AUTHZ" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append> 
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>${catalina.logging.folder}/${psc.as.logging.authz.fileName}</fileNamePattern> 
+          <maxHistory>${psc.as.logging.maxhistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+          <pattern>${psc.as.logging.authz.pattern}</pattern>
+        </encoder>
+      </appender>
+    </sift>
+  </appender>
+
+
+  <!-- Logger for user logins -->
+  <logger name="com.progress.appserv.services.security.OEAuthenticationLogger" 
+          additivity="false" 
+          level="${psc.as.logging.authn.level}">
+        <appender-ref ref="SIFT-${CONTEXT_NAME}-AUTHN" />
+  </logger>
+
+  <!-- Logger for URL access control -->
+  <logger name="com.progress.appserv.services.security.OEAuthorizationLogger" 
+          additivity="false" 
+          level="${psc.as.logging.authz.level}">
+        <appender-ref ref="SIFT-${CONTEXT_NAME}-AUTHZ" />
+  </logger>
+
+</included>
+

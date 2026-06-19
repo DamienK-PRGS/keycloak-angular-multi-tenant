@@ -1,0 +1,49 @@
+Progress.Web.InternalWebHandler&HandleRequest Client-Principal:
+    qualified-user-id: 254a748f-4c10-4ab5-a6c0-ecd768da6843@loulou
+    domain: loulou
+    session-id: 0
+    state:      SSO
+    created:    06/19/2026 16:32:14.000+02:00
+       expires: 06/19/2026 16:37:13.000+02:00
+       details: The CLIENT-PRINCIPAL object credentials were validated by an external system
+         roles: scope.openid,scope.profile,scope.email
+   domain desc: OE application: oeabl
+  domain type: OEApplication
+    properties:
+          property: email_verified , value: false
+    properties:
+          property: allowed-origins , value: http://localhost:4200
+    properties:
+          property: iss , value: http://localhost:8080/auth/realms/loulou
+    properties:
+          property: typ , value: Bearer
+    properties:
+          property: preferred_username , value: damien
+    properties:
+          property: given_name , value: damien
+    properties:
+          property: token_type , value: Bearer
+    properties:
+          property: nonce , value: c3b96622-ee3f-4826-bd7c-96d5f6b45108
+    properties:
+          property: sid , value: 5a4b63c2-0c1f-4331-b5fa-b9af4afe6ceb
+    properties:
+          property: aud , value: account
+    properties:
+          property: acr , value: 0
+    properties:
+          property: azp , value: angular-client-loulou
+    properties:
+          property: auth_time , value: 1781879526
+    properties:
+          property: name , value: damien khouy
+    properties:
+          property: session_state , value: 5a4b63c2-0c1f-4331-b5fa-b9af4afe6ceb
+    properties:
+          property: iat , value: 1781879533000
+    properties:
+          property: family_name , value: khouy
+    properties:
+    properties:
+          property: email , value: damien@loulou
+p_hCP:db-list:  ?

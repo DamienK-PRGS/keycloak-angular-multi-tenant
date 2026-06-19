@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context containing HTTP authentication control
+  -->
+
+<b:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <b:bean
+        class="org.springframework.web.servlet.handler.HandlerMappingIntrospector"
+        name="mvcHandlerMappingIntrospector"/>
+
+    <!-- intercept-url hints
+         role names in the access attribute must have "ROLE_" prefixes. What occurs 
+         the underscore is up to you.
+     -->
+
+    <!-- public access URIs -->
+    <http pattern="/index.html" security="none" />
+
+    <!-- restricted access URIs -->
+    <http auto-config="false" 
+        use-expressions="true" 
+        create-session="never" 
+        disable-url-rewriting="true" 
+        authentication-manager-ref="OEManagerBasicAuth"
+        realm="PAS OEManager">
+
+        <!-- OpenEdge CORS Filter -->
+        <custom-filter before="SECURITY_CONTEXT_FILTER" 
+                       ref="OECORSFilter" />
+
+         <!-- public access URIs -->
+        <intercept-url pattern="/*" method="GET" access="hasAnyRole('ROLE_PSCAdmin','ROLE_PSCOper','ROLE_PSCUser')"/>
+        
+        <!-- URL access controls -->
+        <intercept-url pattern="/applications/**" method="GET" 
+                    access="hasAnyRole('ROLE_PSCAdmin','ROLE_PSCOper')"/>
+        <intercept-url pattern="/applications/**" method="PUT" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+        <intercept-url pattern="/applications/**" method="POST" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+        <intercept-url pattern="/applications/**" method="DELETE" 
+                    access="hasAnyRole('ROLE_PSCAdmin')"/>
+
+        <!-- Best practice - deny anything not explicitly granted. -->
+        <intercept-url pattern="/**" access="denyAll()"/>
+
+        <!-- authentication models -->
+        <http-basic />
+        
+        <anonymous enabled="false" />
+        
+        <!-- login session controls -->
+        <session-management session-fixation-protection="newSession" />
+        
+        <!-- error handlers -->
+        <access-denied-handler error-page="/accessdenied.html" />
+
+	<!-- Disable org.springframework.security.web.csrf.CsrfFilter -->
+	<csrf disabled="true"/>
+
+        
+    </http>
+
+     <!-- The security filter that implements the CORS standard for controlling
+         cross site resource access by http clients. -->
+    <b:bean id="OECORSFilter"
+            class="com.progress.appserv.services.security.OECORSFilter" >
+      <b:constructor-arg ref="corsSource"/>
+      <b:property name="allowAll" value="true" />
+    </b:bean>                
+    
+    <b:bean id="corsSource" class="org.springframework.web.cors.UrlBasedCorsConfigurationSource">
+      <b:property name="corsConfigurations">
+        <b:map>
+          <b:entry key="/**">
+            <b:bean class="com.progress.appserv.services.security.OECorsConfiguration">
+              <b:property name="allowMethods" value="GET,POST,PUT,DELETE" />
+              <b:property name="allowDomains" value="" />
+              <b:property name="allowSubdomains" value="false" />
+              <b:property name="messageHeaders" value="Accept,Accept-Language,Content-Language,Content-Type,X-CLIENT-CONTEXT-ID,Origin,Access-Control-Request-Headers,Access-Control-Request-Method,Pragma,Cache-control,Authorization" />
+              <b:property name="responseHeaders" value="Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,X-CLIENT-CONTEXT-ID" />
+              <b:property name="supportCredentials" value="true" />
+              <b:property name="maxAge" value="-1" />
+            </b:bean>
+          </b:entry>
+        </b:map>
+      </b:property>
+    </b:bean>
+    
+    <b:bean id="sha256passwordEncoder" class="org.springframework.security.crypto.password.MessageDigestPasswordEncoder">
+         <b:constructor-arg value="SHA-256" />
+     </b:bean>
+    <!-- Define how user accounts are used for authentication 
+         This authentication manager contains two different providers:
+         a) The deployment site user accounts in users.properties
+            that can be modified to include site specific PSCAdmin/PSCOper
+            accounts
+         b) The provider reserved by OpenEdge and contains the default
+            user-id and password used by OpenEdge Explorer/Manager.
+            CHANGE THIS PASSWORD ONLY IF YOU WANT TO DISABLE OEE/OEM
+            DEFAULTS AND FORCE DIRECT USER LOGINS 
+    -->
+    <authentication-manager id="OEManagerBasicAuth">
+        <authentication-provider>
+            <!-- Uncomment to add strong password hashing in users.properties 
+            <password-encoder hash="sha" >
+                <salt-source user-property="username" />
+            </password-encoder>
+            -->
+            <user-service properties="/WEB-INF/users.properties" />
+        </authentication-provider>
+
+        <authentication-provider>
+            <user-service>
+                <user name="4A9c204B42DEA7" 
+                      password="{SHA-256}uzIwo01X3tzqR0HU+4ArBj2wg6mjXVVx1BDxHsX7/AE="
+                      authorities="ROLE_PSCAdmin" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</b:beans>

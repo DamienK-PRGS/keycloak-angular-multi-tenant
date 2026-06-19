@@ -10,7 +10,7 @@
 
 # dependencies
 /node_modules
-/pasoe
+
 
 # profiling files
 chrome-profiler-events*.json
@@ -51,6 +51,5 @@ Thumbs.db
 *.r
 *.log
 target
-pasoe/temp
-pasoe/work
 target/
+pasoe/temp

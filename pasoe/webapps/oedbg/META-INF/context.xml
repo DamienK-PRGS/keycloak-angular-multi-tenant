@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context for Openedge Debugger.
+  - The context name is used to name the log file.
+  -->
+<Context>
+  <!-- Environment entry to control log file name -->
+  <Environment
+    name="logback/context-name"
+    type="java.lang.String"
+    value="oedbg"
+    override="false" />
+
+  <JarScanner>
+    <JarScanFilter
+        defaultTldScan="false"
+        defaultPluggabilityScan="false"
+        pluggabilityScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},
+                       oedbg-*.jar" />
+     </JarScanner>
+
+</Context>

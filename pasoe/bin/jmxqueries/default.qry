@@ -1,0 +1,9 @@
+{"O":"PASOE:type=OEManager,name=OeablServiceManager","A":"Applications"}
+{"O":"java.lang:type=Memory","A":"HeapMemoryUsage"}
+{"O":"java.lang:name=G1 Eden Space,type=MemoryPool","A":"PeakUsage"}
+{"O":"PASOE:type=OEManager,name=AgentManager","M":["getAgents","oepas1"]}
+{"O":"PASOE:type=OEManager,name=RestTransportManager","M":["getMetrics","oepas1","ROOT"]}
+#{"O":"Catalina:j2eeType=WebModule,name=//localhost/manager,J2EEApplication=none,J2EEServer=none","M":["findStatusPagesM"]}
+#{"O":"Catalina:j2eeType=WebModule,name=//localhost/manager,J2EEApplication=none,J2EEServer=none","M":["findStatusPage",404]}
+#{"O":"Catalina:j2eeType=WebModule,name=//localhost/oemanager,J2EEApplication=none,J2EEServer=none","M":["findApplicationListeners"]}
+{"O":"PASOE:type=OEManager,name=OeablServiceManager","A":"Applications"}

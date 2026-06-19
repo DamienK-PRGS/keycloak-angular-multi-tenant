@@ -1,0 +1,640 @@
+ # Copyright © 1998-2020 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.
+ # -------------------- openedge.properties ------------------------------
+ #
+ # Property File for the Progress Application Server for OpenEdge
+ #
+ #
+ # This definition file includes the properties that you can define in
+ # a Progress AppServer for OpenEdge.
+ #
+ # All information about the properties in this property file may be found
+ # in the file:
+ #
+ #          openedge.properties.README.
+ #
+ ##########################################################################
+ ##
+---------------------- openedge.properties.README -------------------------
+ 
+This file describes the properties that you can define in the openedge.properties
+file.  The components you can configure in this file are:
+
+    Transports:                 APSV (aia), SOAP, REST, WEB
+    Session Manager:    SessMgr
+        Multi-Session Agent: Agent
+---------------------------------------------------------------------------    
+Comments indicate which properties you cannot modify. Many properties have
+pre-defined defaults. Values for Java components (everything but the Agent)
+can specify Java System Properties that the AppServer defines, such as 
+${psc.as.http.port} or environment variables such as ${CATALINA_BASE}/work. 
+Values for the agent can only specify environment variables, such as 
+${CATALINA_BASE}/work. Java system properties are all lower case while environment 
+variables are upper case.
+---------------------------------------------------------------------------    
+When modifying the openedge.properties file directly, it is recommended that you
+test your changes with the tcman.sh test command.  The command checks for syntax and 
+port problems.  Run the test command with no options (or -h) for usage help.
+---------------------------------------------------------------------------
+The sections of the openedge.properties have a hierarchy.  
+
+There is a parent, example [AppServer], here all available parameters are listed.
+
+Property settings are inherited by the "child" sections: [AppServer.Agent] and 
+[AppServer.SessMgr] for example.
+
+Also note that there is currently a single Agent definition for the
+entire AppServer.  All web applications will share the multi-session Agent
+defined in AppServer.Agent.sessmrgname.
+----------------------------------------------------------------------------
+
+ #
+ # Default properties for the Progress Application Server for OpenEdge
+ #
+[AppServer]
+    allowRuntimeUpdates=0
+        0 - to not allow certain properties to be dynamically updated
+        1 - to allow certain properties to be dynamically updated
+
+    statusEnabled=0
+        0 - disable the return of server/transport status information in json
+        1 - enable the return of server/transport status information in json
+
+    collectMetrics=1
+        0 - disable the collection of metrics used by oemanager
+        1 - enable the collection of count metrics used by oemanager
+        2 - enable the collection of timimg metrics used by oemanager
+        3 - enable both count and timing metrics by oemanager
+        Default is 1 (enabled) for Development and 0 (disabled) for Production
+
+    sessionMgr=oepas1
+        Contains the name of the session manager for the server. This name is used
+        for locating the Session Manager and Agent properties. It defaults to the
+        instance name. Limited to 1 session manager.
+
+    applications=oepas1
+        Contains the name of an ABL application. Defaults to the instance name.
+
+
+#
+# Configure the oepas1 application
+# Default application based on instance name
+[oepas1]
+    webApps=ROOT
+        Contains the name of all oeabl.war web applications installed. OEM uses
+        this to know which webapps to manage
+
+    sessionMgr=oepas1
+        Contains the name of the session manager this application uses. Limited
+        to the default session manager.
+
+[oepas1.ROOT]
+    allowRuntimeUpdates=1
+        Watch openedge.properties and respond to changes for this webapp.
+ 
+ #
+ #  The APSV transport supports OpenEdge clients
+ #
+[oepas1.ROOT.APSV]
+    adapterEnabled=1
+        0 - disable the specified transport from servicing requests
+        1 - enable the specified transport from servicing requests
+
+    enableRequestChunking
+        Enables chunking for the ABL client. This results in a better 
+        performance when transferring large amounts of data. 
+        Defaults to 1.
+
+    oepingEnabled
+        0 - disable the return of an "oeping" test call
+        1 - enable the return of an "oeping" test call
+
+    oepingProcedure
+        Specifies a procedure to run when running an "oeping" test call. The  
+        procedure must be a valid PROGRESS procedures on the application 
+        service PROPATH.
+
+     useHTTPSessions
+        Enables HTTP sessions for the ABL client. An HTTP session is created 
+        when the ABL client connects. 
+        Defaults to 1.
+
+    serviceFaultLevel
+        Will control level of error information returned to the client
+        like REST and SOAP services currently support
+        Defaults to 1.
+
+ #
+ #  The SOAP transport supports SOAP clients
+ #
+[oepas1.ROOT.SOAP]
+    adapterEnabled=1
+        0 - disable the specified transport from servicing requests
+        1 - enable the specified transport from servicing requests
+
+    adminEnabled=1
+        The adminEnabled property controls the SOAP transports ability to accept
+        and  process administration SOAP requests.
+            0 - do not accept or process any administration SOAP requests
+            1 - accept and process administration SOAP requests
+
+    adminSoapAction=urn:services-progress-com:wsa-admin:01
+        When the AdminServer sends administrative messages to a WSA, it must 
+        traverse a web server and possibly a proxy web server or firewall.  In 
+        doing so, the SOAPAction HTTP header may be tested to see if the message 
+        will be allowed.  To accommodate these security checks, the SOAP Action 
+        HTTP header value may be set here to the required value.
+            value - any valid HTTP header character string
+
+    debugClients=
+        The debugClients property controls the SOAP transports ability to dump
+        http and SOAP protocol message information to the AppServer log file. 
+        When this property is non-blank and the loggingLevel property is set to
+        4 (Diagnostic), http message information received by the AppServer and 
+        the exact contents of the incoming and outgoing SOAP messages are 
+        dumped to the log.  This property is a comma separated list of 
+        dot-formatted IP addresses. 
+            blank - do not dump http and SOAP messages for any client
+            * -     dump http and SOAP messages for all SOAP clients
+            x.x.x.x - dump http and SOAP messages for this client IP address
+
+    wsdlEnabled=1
+        The wsdlEnabled property controls the AppServer's ability to respond to 
+        inquiries for WSDL documents for any of the Web service applications it 
+        hosts.
+            0 - Reject WSDL document requests
+            1 - Allow WSDL document requests
+
+    wsaUrl=http://${psc.as.host.name}:${psc.as.http.port}/soap
+        The wsaURL property serves a dual purpose.  First it supplies the 
+        AdminServer with the URL of the WSA so that it may access its built-in 
+        administration Web service application.  Second, it supplies the WSA 
+        with the URL of the WSA, which it will place in the WSDL documents it 
+        generates and distributes.
+
+ #
+ #  The WEB transport supports WebSpeed and WebHandlers
+ #
+[oepas1.ROOT.WEB]
+    defaultCookieDomain=
+        A server relative URL (starting with a "\") to use for all Cookies if
+        not explicitly specified in the set-cookie() or delete-cookie()
+        functions.  The default is the value of the AppURL global variable.
+	
+    wsRoot=/static/webspeed
+         The location of the WebSpeed Workshop static files such as .html
+        .gif. This location must be visible to the Webserver.   
+
+	srvrDebug=
+        0 - specifies? debug=on in the URL has no effect.
+        1 - allows debug information if? debug=on in the URL.
+        <Blank> - defers behavior to srvrAppMode above (Disabled in Production,
+            Enabled in Development)
+
+	defaultHandler=
+		Valid values:
+		OpenEdge.Web.CompatibilityHandler
+			Runs the CompatibilityHandler which supports classic WebSpeed code. 
+			Used when migrating existing code from Classic to PASOE 
+		DefaultWebHandler
+			Runs the DefaultWebHandler which expects a specific handler 
+			(handler1-99) to be found, if no handler found an HTTP error is
+			returned
+		handler(1-99)
+			Specifies ABL class to be run with the URI relative path is passed
+			to the WEB transport [handler#=path.to.ABLClass /URI]
+			Examples:
+				handler1=handlers.OpenHTTPHandler: /open
+				handler2=handlers.SportsHandler: /sports/customer/{custid}
+				handler3=handlers.EmployeeHandler : /employee/{EmpNum}
+				handler4=handlers.ImageHandler : /images/{uuid}
+				handler5=handlers.ImageHandler : /images 
+	
+	adapterEnabled=
+        0 - disable the specified transport from servicing requests
+        1 - enable the specified transport from servicing requests
+			
+	defaultCookiePath=
+        A server relative URL (starting with a "\") to use for all Cookies if
+        not explicitly specified in the set-cookie() or delete-cookie()
+        functions.  The default is the value of the AppURL global variable.
+    
+	srvrAppMode=
+        production - the following items are disabled:
+            - Debugging via the URL (? debug=xxx) is ignored (unless the
+              Debugging option below explicitly enables it).
+            - Utility commands debug, reset and web-utility are disabled.
+            - The ping option only indicates the Agent is available and does not
+              display any information on the Agent's environment.
+            - Web objects specified in the URL with the path "src\web\" cannot
+            be run.
+
+        development - the following items are enabled:
+            - Debugging via the URL (?debug=xxx) is allowed (unless the
+              Debugging option below explicitly disables it).
+            - Utility commands ping, debug, reset and web-utility work.
+            - No limitations on running Web objects with the path "src\web\".
+            - Requires a development license installed (examples: 4GL
+              development or WebSpeed Workshop)
+
+ #
+ #  Default properties for Session Manager
+ #
+[AppServer.SessMgr]
+    ipver=IPv4
+        Internet Protocol to use for network communication.
+            Default: IPv4 - will only accept IPv4 connections
+                     IPv6 - will allow IPv6 connections and IPv4 connections
+                            using address mapping (where supported)
+
+    agentExecFile=${psc.as.oe.dlc}/bin/_mproapsv
+        Specifies the PROGRESS executable used for the Agents. Set at 
+        install time.  Do not modify. 
+
+    agentStartupParam=
+        Specifies server/agent startup parameters that each process uses when 
+        the broker starts it. For example, you might want to specify the 
+        Database (-db) parameter to connect to the application database.
+        This property can be dynamically updated.  Dynamic changes affect
+        only new agents that are started after this value is changed.
+
+    agentWatchdogTimeout=3000
+        The agentWatchdog watches for agent terminate events, it also wakes up
+        every 3 seconds for instance shutdown messages.
+        DO NOT CHANGE the default value of 3000 unless directed by OpenEdge
+        development.
+
+    numInitialAgents=1
+        Number of multi-session agents to start when AppServer is started.
+
+    minAgents=0
+        Minimum number of agents expected at any time.  If the number of 
+        agents drops below this number, a client request will cause the 
+        session manager to start enough agents to equal this number.
+
+        - Default setting of 0: minAgents disabled
+        - Any value greater than 0: that value will be used for minAgents
+        - If minAgents is greater than maxAgents, the minAgent value will be
+          lowered to match the maxAgents
+
+    maxAgents=10
+        Maximum number of concurrent multi-session agents that can run on the
+        AppServer.
+
+    maxABLSessionsPerAgent=200
+        Maximum number of concurrent sessions a multi-session agent can run
+        concurrently.
+
+    maxConnectionsPerAgent=16
+        Maximum number of tcp connections between session manager and multi-
+        session agent.
+
+    agentListenerTimeout=10000
+        Maximum amount of time, in milliseconds, the session manager will wait 
+        for a multi-session agent to start up on connect.
+
+    connectionWaitTimeout=3000
+        Maximum amount of time, in milliseconds, that session manager will wait
+        for a connection to be freed up before creating a new connection 
+
+    requestWaitTimeout=15000
+         Maximum amount of time, in milliseconds, a request will wait in the
+         session manager for a connection to be available before rejecting the
+         request.
+
+    idleResourceTimeout=0
+        Timeout value in milliseconds to determine the frequency with which the
+	PASOE server checks for idle resources. Any resource (e.g. connection, 
+	agent, or client session) that has not been accessed more recently than
+	the specified timeout for that property will be terminated. If this property
+	is set to zero, then idle resource checking is disabled.
+
+    idleSessionTimeout=1800000
+        Timeout value in milliseconds for an idle SessionManager session. The APSV
+		transport uses this value to set the expiration time of the HTTP Session
+		when using HTTP Sessions. It defaults to 30 minutes, which is the same
+		value used by the other transports. Their HTTP Session expiration is controlled
+		in web.xml. This does not require idleResourceTimeout to be set because it is
+		handled by Tomcat.
+
+    idleAgentTimeout=300000
+        Timeout value in milliseconds for an idle agent.
+        If an agent is idle for more than the specified timeout value, then 
+        the session will be deleted when idleResource cleanup is done.
+
+    defaultAgentWaitToFinish=30000
+        Timeout value in milliseconds to wait for a busy agent to finish work
+        during a shutdown caused by the expiration of the idleAgentTimeout.
+        This value should be greater than the normal execution time of the 
+        the application's longest running request.
+
+    defaultAgentWaitAfterStop=30000
+        Timeout value in milliseconds to wait for a stopping agent to finish work
+        during a shutdown caused by the expiration of the idleAgentTimeout.  When
+        this timeout expires, the agent is forcibly shut down.  This value should be
+        greater than the longest time required to handle a normal STOP condition 
+        for the application.
+
+    idleConnectionTimeout=300000
+        Timeout value in milliseconds between an AppServer client and the Session Manager.
+        If a connection is idle for more than the specified timeout value, then 
+        the SessionManager will terminate the connection by automatically 
+        disconnecting the connection from the AppServer.
+
+    socketTimeout=3000
+        Polling interval ...
+
+    tcpNoDelay=1
+        If the value of this property is not zero, then the PASOE Session Manager will
+        automatically set the TCP option TCP_NODELAY for all socket connections created
+        between the Session Manager and the PASOE multi-session agent.
+
+        This disables the use of Nagle’s algorithm, which is a technique used by TCP to reduce
+        the number of small packets sent over a connection by delaying their transmission.
+        Use of Nagle’s algorithm can sometimes cause performance problems for certain kinds of
+        applications, such as OpenEdge, that typically send (relatively) large blocks of data.
+
+        Default value of this property is 1
+
+    agentHost=
+        This property specifies the network adapter that is used for communications
+        between the PASOE Session Manager and the PASOE multi-session agent.  The
+        specified value may be a host name or an IPv4 address.
+
+        The default value is blank, which causes the PASOE multi-session agent to
+        listen for connections on all network adapters ("0.0.0.0").
+
+    agentStartLimit=0
+        determines the maximum number of agents that may be started at the same time
+        if this value is zero or not defined, then no limit is enforced
+
+    agentLogFile=
+        Location, name, and roll-over of the agent log file.
+        To have the agent log file rollover at midnight add {yyyy-MM-dd} for the same format 
+                as other log files.
+        Example:  <path-to>/<instance name>.agent.{yyyy-MM-dd}.log
+
+    agentLoggingLevel=2
+        Logging level for messages into the server log file.  
+            0 - No log file written
+            1 - Error only
+            2 - Basic
+            3 - Verbose 
+            4 - Extended
+
+    agentLogEntryTypes=
+        A single entry or comma delimited list of logging entry types.  
+        UBroker.basic is default, another example is UBroker.SSL.
+
+    defrdLogNumLines=0
+        The maximum number of lines of log information that may be written
+        to the deferred log buffer, shared by all ABL sessions in an agent.
+        The default value is 0, which disables the feature.
+
+    defrdLoggingLevel=0
+        Logging level for messages into the deferred log buffer.  
+            0 - No log file written
+            1 - Error only
+            2 - Basic
+            3 - Verbose 
+            4 - Extended
+
+    defrdLogEntryTypes=
+        A single entry or comma delimited list of logging entry types  
+        for the deferred log buffer.
+
+    publishDir=${catalina.base}/work
+        Location PDSOE should publish r-code for this session manager
+    
+    otelConfigFile=<Path of OpenTelemetry configuration file>
+        Location and name of opentelemetry tracing configuration file for this abl app.
+	This configuration file contains information used to initialize support for 
+	OpenTelemetry and define what operations are traced
+
+ #
+ #  Properties for Session Manager instance
+ #
+[AppServer.SessMgr.oepas1]
+    agentLogFile=${catalina.base}/logs/oepas1.agent.log
+    agentLoggingLevel=3
+    agentLogEntryTypes=ASPlumbing,DB.Connects
+    publishDir=${psc.as.oe.wrkdir}
+
+
+#
+# Sample Application Server Agent definitions
+#
+[AppServer.Agent]
+    infoVersion=9010
+        Internal use.  DO NOT MODIFY
+
+    PROPATH=${CATALINA_BASE}/work,${DLC}/tty
+        servers/agents PROPATH
+
+    collectStatsData=0
+        For future use.
+
+    completeActiveReqTimeout=600000
+		Maximum amount of time, in milliseconds, agent waits to complete any of the active requests in case of an emergency shutdown. 
+        
+    flushStatsData=0
+        For future use.
+
+    workDir=${CATALINA_BASE}/work
+        Path to the Progress working directory.                        
+
+    uuid=
+        Specifies a universally unique identifier for this broker.  
+
+
+    lockAllExtLib=
+        Setting this property will lock around the use of all external
+        libraries, whether they are thread-safe or not.  It will allow only 
+        one external library at a time to be accessed.
+        0 - do not protect external library access by locking
+        1 - protect external library access by locking
+
+    lockAllNonThreadSafeExtLib=
+        This property causes the agent to acquire a lock before calling any
+        non-thread-safe libraries.  As a result, only one library that is not
+        thread-safe can be invoked concurrently.
+        0 - do not protect non-thread-safe library access by locking
+        1 - protect non-thread-safe library access by locking
+
+    usingThreadSafeExtLib=
+        Setting this property indicates to the agent that it can assume that
+        all external libraries references by ABL applications are
+        thread-safe.
+        0 - do not assume that all external libraries are thread-safe
+        1 - assume that all external libraries are thread-safe
+
+    minAvailableABLSessions=1
+
+        The minAvailableSessions property specifies the smallest number of available ABL sessions
+        that should be maintained by the Agent during its operation.  While processing requests,
+        if the number of available ABL sessions falls below this threshold, the agent will prestart
+        sufficient ABL sessions to bring the number of available sessions up to this level.
+
+        The minimum and default value of this property is 1. If any lesser value is specified it 
+        will be reset to 1 internally.
+
+    numInitialSessions=5
+        Indicates the number of initial session that are prestarted by the
+        Application Server.
+
+    agentMaxPort=62202
+    agentMinPort=62002
+        Specifies the minimum and maximum port numbers available to an agent.
+        Generally, if you set agentMinPort, set agentMaxPort so that you specify a 
+        well-defined range.
+            Possible Values:  1024 - 65535.
+        This property can be dynamically updated.  Dynamic changes affect
+        only new agents that are started after this value is changed.
+
+    sessionStartupProc=
+        Specifies a startup procedure for the server.  The procedure must be a
+        valid PROGRESS procedure on the application service PROPATH.
+
+    sessionStartupProcParam=
+        Specifies session startup parameters that each session uses when 
+        the agent starts it. Dynamic changes affect
+        only new agents that are started after this value is changed.
+
+    sessionShutdownProc=
+        Specifies a shutdown procedure for the server.  The procedure must be a
+        valid PROGRESS procedures on the application service PROPATH.
+
+    sessionActivateProc=
+        Specify activate procedures for sessions. The procedures must be valid 
+        PROGRESS procedures on the application service PROPATH.
+
+    sessionDeactivateProc=
+        Specify deactivate procedures for sessions. The procedures must be
+        valid PROGRESS procedures on the application service PROPATH.
+
+    sessionConnectProc=
+        Specify connect procedures for session-managed sessions. The procedures must 
+        be valid PROGRESS procedures on the application service PROPATH.
+
+    sessionDisconnProc=
+        Specify disconnect procedures for session-managed sessions. The procedures must 
+        be valid PROGRESS procedures on the application service PROPATH.
+
+    sessionExecutionTimeLimit=
+        Specifies the number of seconds a request may execute in the multi-session agent
+        before a STOP condition is raised in that session.  The value of 0 indicates
+        that execution time is not limited.
+        
+    agentStartupProc=
+        Specifies a startup procedure for a multi-session agent. The procedure must be a
+        valid PROGRESS procedures on the application service PROPATH.
+
+    agentStartupProcParam=
+        Specifies a character parameter that is passed into the agentStartupProc procedure.
+
+    agentShutdownProc=
+        Specifies a shutdown procedure for a multi-session agent. The procedure must be a
+        valid PROGRESS procedures on the application service PROPATH.
+    sessionExecutionTimeLimit=
+        Specifies the number of seconds a request may execute in the multi-session agent
+        before a STOP condition is raised in that session.  The value of 0 indicates
+        that execution time is not limited.
+
+    ablSessionActiveMemoryLimitFinish=N
+        Mark the ABL Session for termination once it has consumed N bytes of memory but
+        permit the current request to finish before terminating the ABL Session.
+        Each time memory is allocated by the ABL Session, the limit will be evaluated.
+        Regardless of whether it is bound or unbound, the ABL Session will be terminated at the end of the request.
+        The limit must be specified in either kilobytes (K), megabytes (M), or gigabytes (G), regardless of letter case.
+        If no memory denomination is provided, the value will be interpreted as bytes.
+        An improperly configured threshold will result in an unset property.
+        Note: ablSessionActiveMemoryLimitStop > N > ablSessionMemoryLimit
+
+    ablSessionActiveMemoryLimitStop=N
+        When the ABL Session consumes N bytes of memory, a STOP condition is raised on the current request,
+        giving the application the opportunity to handle it.
+        The ABL Session will continue until the request completes, at which point it will be terminated.
+        Each time memory is allocated by the ABL Session, the limit will be evaluated.
+        Regardless of whether it is bound or unbound, the ABL Session will be terminated at the end of the request.
+        The limit must be specified in either kilobytes (K), megabytes (M), or gigabytes (G), regardless of letter case.
+        If no memory denomination is provided, the value will be interpreted as bytes.
+        An improperly configured threshold will result in an unset property.
+        Note: ablSessionMemoryLimit < ablSessionActiveMemoryLimitFinish < N.
+
+    ablSessionMemoryLimit=N
+        Terminate the ABL Session if at the end of a request its memory use exceeds N bytes.
+        This limit will be tested when a request completes. N must be followed by either a K, M, or G
+        to indicate the denomination, where K = Kilobytes, M = Megabytes, and G = Gigabytes.
+        If no memory denomination is provided, the value will be interpreted as bytes.
+        An improperly configured threshold will result in an unset property.
+        Note: N < ablSessionActiveMemoryLimitFinish < ablSessionActiveMemoryLimitStop.
+
+    ablSessionMemoryDump=0
+        If this property is enabled and any of the memory limits, including
+            ablSessionMemoryLimit,
+            ablSessionActiveMemoryLimitFinish,
+            ablSessionActiveMemoryLimitStop,
+        are reached, the agent will generate an ABL call-stack and an ABL Object report.
+        This report will be saved to a file in the current work directory,
+        following the pattern promem.<sessionid>.<agentid>.log.
+        This property can take on one of two values:
+            0 - Disables dumping of ABL Session memory.
+            1 - Enables dumping of ABL Session memory.
+        Note: Enabling this feature turns on ABL Object Tracking,
+              which very slightly impacts both application performance and memory consumption.
+
+    ablSessionFailureLimit=N
+        Terminate the ABL Session after N requests have failed with a return of either ERROR, STOP, or QUIT.
+        This limit will be tested when a request completes.
+        Note: Number of failed requests for a given ABL Session can be tracked from AgentSession metrics table.
+              The metric "RequestsFailed" will act as a guide to configure N value.
+
+    ablSessionRequestLimit=N
+        Terminate the ABL Session once it has serviced N requests.
+        This limit will be tested when a request completes, whether the request completes with success or failure.
+        Note: Please refer to the "RequestsCompleted" metric of the ABL Sessions Metrics from the AgentSessions table,
+              this data will act as a guide to configure the N value.
+
+    fileUploadDirectory=
+        Specifies a directory where the web transport can upload files to.
+        The follow HTML snippet shows how to use this feature:
+            <HTML>
+                  <BODY>
+                    <FORM ENCTYPE="multipart/form-data"
+                          ACTION="http://<yourhost>/<msngr path>/<msngr>/ping" 
+                          METHOD="POST">
+                      <INPUT type="file" name="filename"> <INPUT type="submit">
+                    </FORM>
+                   </BODY>
+            </HTML>
+ 
+        By default, this capability is disabled. To enable it, specify an
+        upload directory.  Only text file upload is supported, not binary.
+        File paths specified by the client that would result in writing the 
+        file to any location other than the fileUploadDirectory, or one of
+        its subdirectories, will be rejected.
+
+    binaryUploadMaxSize=0
+        Specifies the maximum size (in bytes) of binary files that the
+        web transport will handle.  The application will be able to
+        access the contents of the binary files through the 4GL language.
+        Note that this property is not related to the "fileUploadDirectory"
+        property, therefore the web transport will not upload the file to a
+        directory.
+             0 - binary up load is disabled
+            -1 - no maximum size of a binary upload, binary upload enabled
+            any non-zero value greater than 0 - maximum size of binary upload
+
+    messageReadTimeout=1000
+        Once there is activity detected on the connection, this is the number 
+        of milliseconds the Agent will wait to read the full header of a message 
+        from the Session Manager. If the full header is not received in time, the 
+        Agent will write a message to the agent log file and close the socket, 
+        assuming the connection is not one established by the Session Manager.
+
+#
+# Properties for the Application Server Agent instance
+#
+[AppServer.Agent.oepas1]
+    uuid=http://host:port/oepas1
+    PROPATH=.,${WRKDIR},${DLC}/tty
+

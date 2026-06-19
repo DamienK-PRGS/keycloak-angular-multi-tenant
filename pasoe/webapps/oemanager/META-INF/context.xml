@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context for oemanager.
+  - The context name is used to name the log file.
+  -->
+<Context>
+  <!-- Environment entry to control log file name -->
+  <Environment 
+    name="logback/context-name"
+    type="java.lang.String"
+    value="oemanager"
+    override="false" />
+</Context>

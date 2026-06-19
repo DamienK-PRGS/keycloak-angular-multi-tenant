@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+  version="6.0"
+  id="WebApp_ID" 
+  metadata-complete="true">
+
+  <absolute-ordering />
+
+  <env-entry>
+    <env-entry-name>logback/configuration-resource</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>../logging.xml</env-entry-value>
+  </env-entry>
+
+<!-- BEGIN:Spring security.definition  -->
+    <!--
+      - Location of the XML file that defines the root application context
+      - Applied by ContextLoaderListener.
+      -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            <!--
+            /WEB-INF/oemgrSecurity-anonymous.xml
+            /WEB-INF/oemgrSecurity-basic-local.xml
+            /WEB-INF/oemgrSecurity-basic-ldap.xml
+            /WEB-INF/oemgrSecurity-basic-oerealm.xml
+            /WEB-INF/oemgrSecurity-container.xml
+            /WEB-INF/oemgrSecurity-form-local.xml
+            -->
+            /WEB-INF/oemgrSecurity-container.xml
+        </param-value>
+    </context-param>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+    <!-- This listener needs to be first. -->
+    <listener>
+      <listener-class>ch.qos.logback.classic.selector.servlet.ContextDetachingSCL</listener-class>
+    </listener>
+
+    <!--
+      - Loads the root application context of this web app at startup.
+      - The application context is then available via
+      - WebApplicationContextUtils.getWebApplicationContext(servletContext).
+    -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+   <!-- Nothing below here needs to be modified -->
+
+    <filter>
+      <filter-name>LoggerContextFilter</filter-name>
+      <filter-class>com.progress.appserv.services.logging.LoggerContextFilter</filter-class>
+    </filter>
+    <filter-mapping>
+      <filter-name>LoggerContextFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ServiceRegistry/ServiceRegistryFactory is name of the singleton JNDI resource.      --> 
+    <!-- This Registry book-keeps all named OEABL webapps and their information              -->
+    <!-- This is resource reference for the ServiceRegistry object placed in JNDI Namespace. -->
+    <!-- Placing it in web.xml makes this web app context aware about the resource.          -->
+   <!--
+    <resource-ref>
+      <description>Registry for maintaining information about OEABL Apps</description>
+      <res-ref-name>ServiceRegistry/ServiceRegistryFactory</res-ref-name>
+      <res-type>com.progress.appserv.services.naming.ServiceRegistry</res-type>
+      <res-auth>Container</res-auth>
+    </resource-ref>
+ -->
+    <servlet>
+        <servlet-name>mvc-dispatch</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/mvc-dispatch-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+<!-- END:Spring security.definition  -->
+
+<!-- BEGIN:OEManager definition  -->
+
+  <display-name>Progress Application Server for OpenEdge Manager Application</display-name>
+  <description>
+    A web application to manage PASOE applications;
+    oemanager lets you manage session manager, agents, transports for oe applications.
+  </description>
+
+  <filter>
+      <filter-name>RequestsFilter</filter-name>
+      <filter-class>com.progress.appserv.manager.servlet.OEManagerRequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+      <filter-name>RequestsFilter</filter-name>
+      <servlet-name>OEManagerServlet</servlet-name>
+  </filter-mapping>
+
+  <listener>
+      <listener-class>com.progress.appserv.manager.servlet.OEManagerContextListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>OEManagerServlet</servlet-name>
+    <servlet-class>
+          org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet
+    </servlet-class>
+    <init-param>
+      <param-name>jakarta.ws.rs.Application</param-name>
+      <param-value>com.progress.appserv.manager.servlet.OEManagerRoot</param-value>
+    </init-param>
+    <init-param>
+        <param-name>redirects-list</param-name>
+        <param-value>
+        .*\.jsp
+        .*\.jspx
+        </param-value>
+    </init-param>
+    <init-param>
+        <param-name>redirect-servlet-name</param-name>
+        <param-value>mvc-dispatch</param-value>
+    </init-param>
+    <init-param>
+        <param-name>static-resources-list</param-name>
+        <param-value>
+        /index.html
+        .*\.html
+        .*\.htm
+        .*\.json
+        .*\.js
+        </param-value>
+    </init-param>
+    <init-param>
+      <param-name>static-welcome-file</param-name>
+      <param-value>/index.html</param-value>
+    </init-param> 
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+        <display-name>REST API Documentation</display-name>
+        <servlet-name>RestAPIDoc</servlet-name>
+        <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+        <init-param>
+            <param-name>jaxrs.serviceClasses</param-name>
+            <param-value>com.progress.appserv.manager.rest.AgentManagerService</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jaxrs.features</param-name>
+            <param-value>org.apache.cxf.jaxrs.openapi.OpenApiFeature</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jaxrs.providers</param-name>
+            <param-value>
+                org.apache.cxf.jaxrs.provider.MultipartProvider,
+                com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider
+            </param-value>
+        </init-param>
+                <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>RestAPIDoc</servlet-name>
+        <url-pattern>/doc/*</url-pattern>
+    </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+    <!--
+      - These context parameters are needed for communication
+      - between OEManager servlet and REST applications.
+      - NOTE: Any change to these parameters must be followed 
+      - by  corresponding change in application's web.xml and
+      - oemgrSecurity-xxxx.xml files
+      -->
+    <context-param>
+        <param-name>adaptermanID</param-name>
+        <param-value>C62384a0F1516B00</param-value>
+    </context-param>
+    <context-param>
+        <param-name>adaptermanSecret</param-name>
+        <param-value>1f177e7600202027731f2e293322362174</param-value>
+    </context-param>
+
+    <!-- Deployment process waits upto 'maxDeployWaitTime' milliseconds
+      - for the context to be up. Increase this if deployment process 
+      - times out because of context not initialized.
+      -->
+    <context-param>
+        <param-name>maxDeployWaitTime</param-name>
+        <param-value>60000</param-value>
+    </context-param>
+
+  <servlet-mapping>
+    <servlet-name>OEManagerServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+<!-- END:OEManager definition  -->
+
+  <error-page>
+    <error-code>401</error-code>
+    <location>/unauth.html</location>
+  </error-page>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/notavail.html</location>
+  </error-page>
+
+<!-- BEGIN:container.security-->
+    <!-- NOTE: uncomment and configure container security "ONLY" if 
+         oemgrSecurity-container.xml is configured for the Spring 
+         security above. For all other modes comment this section. 
+         The <auth-constraint> element needs to define the roles
+         returned by the Java container's authentication.  Those
+         Same role names need to be configured in oemgrSecurity-container.xml
+    -->
+    <security-constraint>
+        <display-name>OEManager Container CORS constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>CORS preflight access</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>OPTIONS</http-method>
+        </web-resource-collection>
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>OEManager Container Security Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ROLE_PSCAdmin</role-name>
+            <role-name>ROLE_PSCOper</role-name>
+            <role-name>ROLE_PSCUser</role-name>
+            <role-name>ROLE_PSCNone</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Tomcat Manager Application</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>ROLE_PSCAdmin</role-name>
+    </security-role>
+    <security-role>
+        <role-name>ROLE_PSCOper</role-name>
+    </security-role>
+    <security-role>
+        <role-name>ROLE_PSCUser</role-name>
+    </security-role>
+    <security-role>
+        <role-name>ROLE_PSCNone</role-name>
+    </security-role>
+ 
+<!-- END:container.security-->
+
+</web-app>

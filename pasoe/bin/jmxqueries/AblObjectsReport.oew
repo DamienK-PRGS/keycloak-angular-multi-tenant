@@ -1,0 +1,322 @@
+{"OEWatcher":
+[
+	{  
+		"Name":"AblApplications",
+		"Schedule":{"StartDelay":3,"Interval":60},		
+		"Params":{"startTime":"12/12/2017 12:50","endTime":"12/12/2017 13:43",
+        "FunctionFormatDate":" function formatDate(date) { var hours = date.getHours(); var minutes = date.getMinutes(); minutes = minutes < 10 ? '0'+minutes : minutes;  var seconds = date.getSeconds(); seconds = seconds < 10 ? '0'+seconds : seconds; var strTime = hours + ':' + minutes + ':' + seconds; return strTime +'('+(date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear()+')' ;}"
+        },
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=OeablServiceManager\",\"A\":\"Applications\"}",
+			"Extract":{"appName":"Applications:name"}
+		},
+		"Rules":
+		[
+         {
+			"Name":"CheckEnd",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition",
+			"Constructor": [
+				"var curd = new Date(); ",
+				"var endTime = new Date('${endTime}'); ",
+				" (curd.getTime() - endTime.getTime()) > 0 "]},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"getAgents"}
+			]
+		},
+        {
+			"Name":"CheckStart",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition",
+			"Constructor": [
+				"var curd = new Date(); ",
+				"var startTime = new Date('${startTime}'); ",
+				" (curd.getTime() - startTime.getTime()) > 0 "]},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"getAgents1"}
+			]
+		}
+        
+		]
+	}
+ 	,"================   After Start Time. Start tracking if not started ================="
+ 	,"*******************************   getAgents1  **********************************",
+	{
+		"Name":"getAgents1",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"getAgents\",\"${appName}\"]}",
+			"Extract":{"agentId":"getAgents:agents:agentId"}
+		},
+		"Rules":
+		[{
+			"Name":"GoToGetSessions",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"checkTrackingToStart"}
+			]
+		}
+		]
+	}
+	,"******************************  checkTrackingToStart ***********************************",
+	{
+		"Name":"checkTrackingToStart",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"trackingABLObjects\",\"${agentId}\"]}",
+			"Extract":{"trackingABLObjects":"trackingABLObjects"}
+		},
+		"Rules":
+		[
+        {
+			"Name":"GoToGetSessions",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackingABLObjects}\" == \"false\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"startTracking"}
+			]
+		},
+        {
+			"Name":"Error",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackingABLObjects}\" != \"true\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ErrorJsLogAction","Constructor":"\"Error. Calling trackingABLObjects: '${trackingABLObjects}'\""}
+			]
+		}
+        
+		]
+	}
+	,"***********************      startTracking  ******************************************",
+	{
+		"Name":"startTracking",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"trackABLObjects\",\"${agentId}\",\"true\"]}",
+			"Extract":{"trackABLObjects":"trackABLObjects"}
+		},
+		"Rules":
+		[
+        {
+			"Name":"TrackingStarted",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackABLObjects}\" == \"true\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.InfoJsLogAction","Constructor":
+                [
+                "\"ABL App '${appName}' Agent '${agentId}'. Tracking started successfully.\""
+                ]}
+			]
+		},
+        {
+			"Name":"TrackingNotStarted",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ErrorJsLogAction","Constructor":
+                [
+                " var startInfo;",
+                "  startInfo = \"Unsuccessful attempt to start tracking. Returned: '${trackABLObjects}'\"",
+                "\"ABL App '${appName}' agent '${agentId}'. \"+startInfo"
+                ]}
+			]
+		}
+		]
+	}
+ 	,"================   After End Time. Start tracking if not started ================="
+	,"*****************************************************************",
+	{
+		"Name":"getAgents",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"getAgents\",\"${appName}\"]}",
+			"Extract":{"agentId":"getAgents:agents:agentId"}
+		},
+		"Rules":
+		[{
+			"Name":"GoToGetSessions",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"checkTrackingStatusAfterEnd"}
+			]
+		}
+		]
+	}
+	,"*****************************************************************",
+	{
+		"Name":"checkTrackingStatusAfterEnd",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"trackingABLObjects\",\"${agentId}\"]}",
+			"Extract":{"trackingABLObjects":"trackingABLObjects"}
+		},
+		"Rules":
+		[
+            {
+			"Name":"EndPeriod1",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"${trackingABLObjects} == false"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.TraceJsLogAction","Constructor":
+                [
+                " var startTime = new Date('${startTime}');",
+                " var endTime = new Date('${endTime}');",
+                " curTime = new Date();",
+                "\"ABL App '${appName}' agent '${agentId}'. Tracking is not active. Tracking interval: \"+formatDate(startTime)+\" - \"+formatDate(endTime)",
+                " ${FunctionFormatDate} "
+                ]}
+			]
+            },
+            {
+			"Name":"EndPeriod2",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"${trackingABLObjects} == true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.TraceJsLogAction","Constructor":
+                [
+                " var curTime = new Date();",
+                "\"ABL App '${appName}' agent '${agentId}'. Starting ABL Objects report at \"+formatDate(curTime)",
+                " ${FunctionFormatDate} "
+                ]}
+                ,
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"AblObjectsReport"}
+			]
+            }
+            
+		]
+	}
+	,"*****************************************************************",
+	{
+		"Name":"AblObjectsReport",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"getABLObjectsReport\",\"${agentId}\"]}",
+			"Extract":{"ABLReturnVal":"getABLObjectsReport:ABLReturnVal","AgentPID":"getABLObjectsReport:pid","agentSessionId":"getABLObjectsReport:ABLOutput:ABLObjects:AgentSessionId","ABLObjects":"getABLObjectsReport:ABLOutput:ABLObjects:Objects"}
+		},
+		"Rules":
+		[
+            {
+			"Name":"PrintABLObjectReport",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${ABLReturnVal}\"==\"true\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.InfoJsLogAction","Constructor":
+                [
+                " var rrr = '${ABLObjects}'.trim();",
+                " if(rrr.length()==0) rrr='}'",
+                " var array = rrr.split('{');",
+                " var toPrint = \"ABL Objects Report:\\n ABL App '${appName}' Agent '${agentId}' Session '${agentSessionId}' Retrun code '${ABLReturnVal}'\";",
+                " toPrint +=  \"\\nObjects:\";",
+                " for(ii=0; ii<array.length; ii++) {",
+                " toPrint += '\\n\\t{'+array[ii];",
+                "} toPrint "
+                ]}
+                ,
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"StopTrackng"}
+                
+            ]},
+            
+            {
+			"Name":"Object Error",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ErrorJsLogAction","Constructor":
+                "\"ABL App '${appName}' agent '${agentId}'. Error. Function getABLObjectsReport returned '${ABLReturnVal}'"
+                }
+			]
+            }
+            
+		]
+	}
+	,"============================= Stop Objects Tracking ======================================="
+	,"******************************************************************************************",
+	{
+		"Name":"StopTrackng",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"trackingABLObjects\",\"${agentId}\"]}",
+			"Extract":{"trackingABLObjects":"trackingABLObjects"}
+		},
+		"Rules":
+		[
+        {
+			"Name":"GoToGetSessions",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackingABLObjects}\" == \"true\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ChainAction","Constructor":"stopTracking1"}
+			]
+		},
+        {
+			"Name":"NotActive",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackingABLObjects}\" == \"false\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.TraceJsLogAction","Constructor":
+                "\"ABL App '${appName}' agent '${agentId}'. Objects tracking is already not active"}
+			]
+		},
+        {
+			"Name":"TrackingStatusError",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackingABLObjects}\" == \"false\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.TraceJsLogAction","Constructor":
+                "\"ABL App '${appName}' agent '${agentId}'. Error result of function trackingABLObjects: '${trackingABLObjects}'"}
+			]
+		}
+        
+		]
+	}
+	,"***********************      stopTracking  ******************************************",
+	{
+		"Name":"stopTracking1",
+		"Params":{},
+		"Query":
+		{
+			"JmxQuery":"{\"O\":\"PASOE:type=OEManager,name=AgentManager\",\"M\":[\"trackABLObjects\",\"${agentId}\",\"false\"]}",
+			"Extract":{"trackABLObjects":"trackABLObjects"}
+		},
+		"Rules":
+		[
+        {
+			"Name":"TrackingStarted",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"\"${trackABLObjects}\" == \"true\""},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.InfoJsLogAction","Constructor":
+                [
+                "\"ABL App '${appName}' Agent '${agentId}'. Tracking stopped successfully.\""
+                ]}
+			]
+		},
+        {
+			"Name":"TrackingNotStarted",
+			"Condition":{"ClassName":"com.progress.appserv.util.oewatcher.JsCondition","Constructor":"true"},
+			"Actions":
+			[
+				{"ClassName":"com.progress.appserv.util.oewatcher.ErrorJsLogAction","Constructor":
+                [
+                " var stopInfo;",
+                "  startInfo = \"Unsuccessful attempt to stop tracking. Returned: '${trackABLObjects}'\"",
+                "\"ABL App '${appName}' agent '${agentId}'. \"+stopInfo"
+                ]}
+			]
+		}
+		]
+	}
+	]
+
+
+} 

@@ -1,0 +1,12 @@
+{
+    "version": "2.0",
+    "serviceName": "",
+
+    "handlers": [
+        {
+            "uri": "/webhandler",
+            "class": "webhandler",
+            "enabled": true
+        }
+    ]
+}
